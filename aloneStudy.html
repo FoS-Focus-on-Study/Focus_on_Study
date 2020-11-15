@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alone Study</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <div class="navbarLogo">
+        <a href="#" class="navbarLogo">Focus on Study</a>
+      </div>
+      <div class="navbarMenu">
+        <ul class="navbarMenu">
+          <li class="navbarMenuItem">My page</li>
+          <li class="navbarMenuItem">Logout</li>
+        </ul>
+      </div>
+    </nav>
     <div class="pageFrame">
-        <div class="aloneToDoBox">
-            <div class="toDoTitle">To Do List</div>
-            <div class="subjectBox">
-                <div class="subjectTitle">
-                    <span class="text">과목명 1</span>
-                    <span class="toggle">🔽</span>
-                    <button class="startButton">▶</button>
-                    <button class="deleteButton">X</button>
-                </div>
-                <div class="details">
-                    <ul class="toDoList">
-                        <li><input type="checkbox"> 세부사항1
-                            <button class="deleteButton">X</button>
-                        </li>
-                    </ul>
-                </div> 
-            </div>
-            <button class="subjectAddButton">+</button>
+      <div class="aloneToDoBox">
+        <div class="toDoTitle">To Do List</div>
+        <div class="subjectBox">
+          <div class="subjectTitle">
+            <span class="text">과목명 1</span>
+            <span class="toggle">🔽</span>
+            <button class="startButton">▶</button>
+            <button class="deleteButton">X</button>
+          </div>
+          <div class="details">
+            <ul class="toDoList">
+              <li>
+                <input type="checkbox" /> 세부사항1
+                <button class="deleteButton">X</button>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="statisticsBox">
-            <div class="statisticsTitle">Statistics</div>
-        </div>
+        <button class="subjectAddButton">+</button>
+      </div>
+      <div class="statisticsBox">
+        <div class="statisticsTitle">Statistics</div>
+      </div>
     </div>
-</body>
-<script>
-    const aloneStartBtn = document.querySelector(".aloneToDoBox .subjectTitle button");
+  </body>
+  <script>
+    const aloneStartBtn = document.querySelector(
+      ".aloneToDoBox .subjectTitle button"
+    );
 
-    function openAloneStudyPage(){
-        const option = "width=350px, height=500px";
+    function openAloneStudyPage() {
+      const option = "width=350px, height=500px";
 
-        window.open("./popup_studying.html", "popup_studying", option);
+      window.open("./popup_studying.html", "popup_studying", option);
     }
     aloneStartBtn.onclick = openAloneStudyPage;
-</script>
+  </script>
 </html>

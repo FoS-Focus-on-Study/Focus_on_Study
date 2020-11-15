@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Live Streaming</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="liveStreamingScreen">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <div class="navbarLogo">
+        <a href="#">Focus on Study</a>
+      </div>
+      <div class="navbarMenu">
+        <ul class="navbarMenu">
+          <li class="navbarMenuItem">My page</li>
+          <li class="navbarMenuItem">Logout</li>
+        </ul>
+      </div>
+    </nav>
+    <div class="liveStreamingScreen"></div>
+  </body>
+  <script>
+    const groupStartBtn = document.querySelector(
+      ".groupToDoBox .subjectTitle button"
+    );
 
-    </div>
-</body>
-<script>
-    const groupStartBtn = document.querySelector(".groupToDoBox .subjectTitle button");
-    
-    function onloadGroupStudyPage(){
-        const option = "top=100px left=100px width=350px, height=500px";
-    
-        window.open("./popup_studying.html", "popup_studying", option);
+    function onloadGroupStudyPage() {
+      const option = "top=100px left=100px width=350px, height=500px";
+
+      window.open("./popup_studying.html", "popup_studying", option);
     }
-    
+
     window.onload = onloadGroupStudyPage;
-</script>
+  </script>
 </html>
