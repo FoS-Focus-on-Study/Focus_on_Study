@@ -192,6 +192,10 @@ button {
     border-radius: 20px;
 }
 
+.aloneToDoBox .subjectBox.hide {
+    display: none;
+}
+
 .aloneToDoBox .toDoTitle,
 .statisticsBox .statisticsTitle {
     height: 70px;
