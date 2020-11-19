@@ -97,6 +97,7 @@ a.navbarLogo {
 .aloneBox,
 .groupBox {
   width: 450px;
+  position: relative;
 }
 
 .aloneBox {
@@ -116,8 +117,25 @@ a.navbarLogo {
   left: 35%;
 }
 
+.groupBox button {
+  position: absolute;
+  margin: 22% 0;
+}
+
 .groupBox button a {
   text-decoration: none;
+}
+
+.groupButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.groupBox .selectGroup {
+  display: flex;
+  justify-content: center;
+  margin-top: 30%;
 }
 
 /* aloneStudy.html */

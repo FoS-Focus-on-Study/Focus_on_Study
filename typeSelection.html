@@ -28,9 +28,20 @@
       </div>
       <div class="groupBox">
         <div class="text">Group</div>
-        <button class="groupButton" onclick="location.href='/selectGroup.html'">
-          <a href="#"> 그룹 공부하기</a>
-        </button>
+        <form method="post" action="./groupStudy.html">
+          <div class="selectGroup">
+            <select>
+              <option value="">1팀</option>
+              <option value="">2팀</option>
+            </select>
+          </div>
+          <div class="groupButton">
+            <input type="submit" value="그룹 공부하기" />
+          </div>
+          <!-- <button class="groupButton">
+              <a href="#"> 그룹 공부하기</a>
+            </button> -->
+        </form>
       </div>
     </div>
   </body>
