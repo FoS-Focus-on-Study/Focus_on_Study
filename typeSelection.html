@@ -12,8 +12,9 @@
       <div class="navbarLogo">
         <a href="#" class="navbarLogo">Focus on Study</a>
       </div>
-      <div class="navbarMenu">
+      <div class="navbarMenu div">
         <ul class="navbarMenu">
+          <li class="navbarMenuItem goBack">⇦</li>
           <li class="navbarMenuItem">My page</li>
           <li class="navbarMenuItem">Logout</li>
         </ul>
@@ -28,21 +29,26 @@
       </div>
       <div class="groupBox">
         <div class="text">Group</div>
-        <form method="post" action="./groupStudy.html">
+        <form action="/groupStudy.html">
           <div class="selectGroup">
             <select>
-              <option value="">1팀</option>
-              <option value="">2팀</option>
+              <option value="1팀">1팀</option>
+              <option value="2팀">2팀</option>
             </select>
           </div>
           <div class="groupButton">
-            <input type="submit" value="그룹 공부하기" />
+            <button type="submit" class="groupButton grpbtn">
+              그룹 공부하기
+            </button>
           </div>
           <!-- <button class="groupButton">
               <a href="#"> 그룹 공부하기</a>
             </button> -->
         </form>
       </div>
+    </div>
+    <div class="gotoBack">
+      <button class="gobackButton">뒤로가기</button>
     </div>
   </body>
 </html>

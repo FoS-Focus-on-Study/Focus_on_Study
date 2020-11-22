@@ -26,6 +26,10 @@ a.navbarLogo {
   display: flex;
 }
 
+.navbarMenu.div {
+  position: relative;
+}
+
 .navbarMenuItem {
   padding: 4px 6px;
   margin: 0 8px;
@@ -33,6 +37,16 @@ a.navbarLogo {
   cursor: pointer;
   border-radius: 4px;
 }
+
+.navbarMenuItem.goBack {
+  /* padding: 5px 5px; */
+  position: absolute;
+  border-style: none;
+  font-size: x-large;
+
+  transform: translateX(-230px);
+}
+
 /* #1dd1a1 */
 .navbarMenuItem:hover {
   background-color: #b4ffe2;
