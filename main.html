@@ -11,7 +11,8 @@
         <div class="logInBox">
             <div class="logInOrSignUp">
                 <span class="loginText">Login</span>
-                <button class="signUpButton">회원가입</button>
+                <button class="signUpButton"
+                    onclick="location.href='signUp.html'">회원가입</button>
             </div>
             <form action="/typeSelection.html" class="logInForm">
                 <label for="inputID">ID : 
@@ -21,16 +22,23 @@
                 <button class="logInButton">로그인</button>
             </form>
         </div>
-        <div class="siteInformation">
+        <div class="siteInformationBox">
             <div class="title">Focus on Study (FoS) </div>
             <div class="slideBox">
                 <button class="prev">⇦</button>
                 <button class="next">⇨</button>
+                <div class="slideImages">
+                    <img class="showing" src="./images/slideImage1.jpg" >
+                    <img src="./images/slideImage2.jpg" >
+                    <img src="./images/slideImage3.jpg" >
+                </div>
             </div>
             <div class="information">
                 <p>개인 공부하기와 그룹에서 공부하기 중 선택하실 수 있습니다.</p>
             </div>
         </div>
     </div>
+    <script src="./logIn.js"></script>
+    <script src="./InformationSlide.js"></script>
 </body>
 </html>
