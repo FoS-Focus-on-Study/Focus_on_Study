@@ -291,6 +291,44 @@ button {
 
 }
 
+.statisticsBox .inputDate {
+    display: inline-block;
+    text-align: center;
+    margin-left: 30%;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.statisticsBox .typeSelect {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .statisticsBox table td {
+    margin: auto;
+}
+
+.sun{
+color:#ef3333;
+}
+.sat{
+color:#2107e0;
+}
+.content-right table tr td{
+width: 40px;
+height: 40px;
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+}
+.active{
+background: #0b0809;
+border-radius: 50%;
+color: #ffffff;
+} */
+
+
+
 .aloneToDoBox .subjectTitle input {
     border: none;
     border-bottom: 1px solid black;

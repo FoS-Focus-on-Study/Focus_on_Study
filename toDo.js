@@ -7,14 +7,7 @@ const subjectList = document.querySelector(".aloneToDoBox .subjectList"),
     toDoListUl = document.querySelector(".aloneToDoBox .subjectBox.hide .details ul"),
     toDoLi = document.querySelector(".aloneToDoBox .subjectBox.hide .details ul li"),
     toDoAddButton = document.querySelector(".aloneToDoBox .subjectBox.hide .details .toDoAddButton"),
-    toDoDeleteButton = document.querySelector(".aloneToDoBox .subjectBox.hide .details li .deleteButton"),
-    aloneStartBtn = document.querySelector(".aloneToDoBox .subjectTitle button");
-
-function openAloneStudyPage(){
-    const option = "width=350px, height=500px";
-
-    window.open("./popup_studying.html", "popup_studying", option);
-}
+    toDoDeleteButton = document.querySelector(".aloneToDoBox .subjectBox.hide .details li .deleteButton");
 
 function init(){
     addSubjectEvent();
@@ -52,7 +45,7 @@ function addSubjectEvent(e){
 
     const aloneStartBtn = toggleBtn.nextElementSibling;
     aloneStartBtn.onclick = openAloneStudyPage;
-    
+
     const newToDoAddButton = addedSubject.lastElementChild.lastElementChild;
     // console.log(newToDoAddButton);
     newToDoAddButton.onclick = addToDoEvent;

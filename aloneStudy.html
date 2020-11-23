@@ -40,6 +40,39 @@
               </li>
             </ul>
           </div>
+        <div class="statisticsBox">
+            <div class="statisticsTitle">Statistics</div>
+            <form action="" class="sendDate">
+                <input type="date" class="inputDate" >
+                <input type="submit" class="submitBtn" value="보기">
+            </form>
+            <div class="typeSelect">
+                <button class="daily">일별</button>
+                <button class="weekly">주별</button>
+                <button class="monthly">월별</button>
+            </div>
+            <div class="main">
+                <canvas id="myChart" width="300" height="200"></canvas>
+            </div>
+            <!-- <table id="calendar" align="center">
+                <thead>
+                    <tr class="btn-wrap clearfix">
+                        <td><label id="prev"> &#60; </label></td>
+                        <td align="center" id="current-year-month" colspan="5"></td>
+                        <td><label id="next"> &#62; </label></td>
+                    </tr>
+                    <tr>
+                        <td class = "sun">Sun</td>
+                        <td >Mon</td>
+                        <td >Tue</td>
+                        <td >Wed</td>
+                        <td >Thu</td>
+                        <td >Fri</td>
+                        <td class= "sat">Sat</td>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody"></tbody>
+            </table> -->
         </div>
         <button class="subjectAddButton">+</button>
       </div>
@@ -48,5 +81,12 @@
       </div>
     </div>
 </body>
+
+<script src="./studying.js"></script>
 <script src="./toDo.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<script src="./statistics.js"></script>
 </html>
