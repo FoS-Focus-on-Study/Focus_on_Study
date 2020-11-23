@@ -8,7 +8,7 @@ ul {
   margin: 0;
 }
 
-a.navbarLogo {
+a {
   text-decoration: none;
   color: white;
   font-size: x-large;
@@ -24,6 +24,7 @@ a.navbarLogo {
 
 .navbarMenu {
   display: flex;
+  color: white;
 }
 
 .navbarMenu.div {
@@ -33,24 +34,31 @@ a.navbarLogo {
 .navbarMenuItem {
   padding: 4px 6px;
   margin: 0 8px;
-  border: solid #acffe9 2px;
+  /* /border: solid #acffe9 2px; */
   cursor: pointer;
   border-radius: 4px;
 }
 
-.navbarMenuItem.goBack {
-  /* padding: 5px 5px; */
-  position: absolute;
-  border-style: none;
+.goBack {
+  padding: 0px 0px;
+  display: inline;
+  list-style: none;
+  /* border: solid #acffe9 2px; */
+  border-radius: 4px;
   font-size: x-large;
+  cursor: pointer;
+}
 
-  transform: translateX(-230px);
+.goBack:hover {
+  /* background-color: #b4ffe2; */
+  /* transition: background-color 250ms linear; */
 }
 
 /* #1dd1a1 */
 .navbarMenuItem:hover {
   background-color: #b4ffe2;
   transition: background-color 250ms linear;
+  color: black;
 }
 
 .pageFrame {
@@ -140,12 +148,13 @@ a.navbarLogo {
   text-decoration: none;
 }
 
+/* 지혜_추가1 */
 .groupButton {
   display: flex;
   justify-content: center;
   margin-top: 60px;
 }
-
+/* 지혜_추가2 */
 .groupBox .selectGroup {
   display: flex;
   justify-content: center;
