@@ -1,72 +1,6 @@
 * {
   padding: 10px;
 }
-
-/* Navbar */
-ul {
-  list-style: none;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-  font-size: x-large;
-}
-
-#navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px;
-  background-image: url("/imgs/green_main5.png");
-  background-size: cover;
-  background-position: center;
-
-  background-repeat: no-repeat;
-  /* background-color: #1dd1a1; */
-}
-
-.navbarMenu {
-  display: flex;
-  color: white;
-  font-weight: 600;
-}
-
-.navbarMenu.div {
-  position: relative;
-}
-
-.navbarMenuItem {
-  padding: 4px 6px;
-  margin: 0 8px;
-  /* /border: solid #acffe9 2px; */
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.goBack {
-  padding: 0px 0px;
-  display: inline;
-  list-style: none;
-  /* border: solid #acffe9 2px; */
-  border-radius: 4px;
-  font-size: x-large;
-  cursor: pointer;
-}
-
-.goBack:hover {
-  /* background-color: #b4ffe2; */
-  /* transition: background-color 250ms linear; */
-}
-
-/* #1dd1a1 */
-/* #10ac84 */
-.navbarMenuItem:hover {
-  /* background-color: #b4ffe2; */
-  transition: color 250ms linear;
-  color: #1dd1a1;
-}
 button {
   background-color: #badc58;
   border: none;
@@ -172,7 +106,7 @@ button {
 
 .signUpFrame {
   width: 300px;
-  height: 300px;
+  height: 500px;
   border: solid black 1px;
   text-align: center;
   margin: auto;
@@ -206,7 +140,6 @@ button {
 .aloneBox,
 .groupBox {
   width: 450px;
-  position: relative;
 }
 
 .aloneBox {
@@ -233,26 +166,8 @@ button {
   left: 35%;
 }
 
-.groupBox button {
-  position: absolute;
-  margin: 22% 0;
-}
-
 .groupBox button a {
   text-decoration: none;
-}
-
-/* 지혜_추가1 */
-.groupButton {
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
-}
-/* 지혜_추가2 */
-.groupBox .selectGroup {
-  display: flex;
-  justify-content: center;
-  margin-top: 30%;
 }
 
 /* aloneStudy.html */
@@ -294,42 +209,6 @@ button {
 .statisticsBox .statisticsTitle {
   border-radius: 0 20px 0 0;
 }
-
-.statisticsBox .inputDate {
-  display: inline-block;
-  text-align: center;
-  margin-left: 30%;
-  border: none;
-  border-bottom: 1px solid black;
-}
-
-.statisticsBox .typeSelect {
-  display: flex;
-  justify-content: space-around;
-}
-
-/* .statisticsBox table td {
-    margin: auto;
-}
-
-.sun{
-color:#ef3333;
-}
-.sat{
-color:#2107e0;
-}
-.content-right table tr td{
-width: 40px;
-height: 40px;
-text-align: center;
-font-size: 20px;
-font-weight: bold;
-}
-.active{
-background: #0b0809;
-border-radius: 50%;
-color: #ffffff;
-} */
 
 .aloneToDoBox .subjectTitle input {
   border: none;
