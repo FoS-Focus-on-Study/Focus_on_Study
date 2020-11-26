@@ -1,6 +1,78 @@
-* {
-  padding: 10px;
+*:not(html) {
+  padding: 10px 0px;
 }
+/* Navbar */
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  padding: 25px;
+  background-image: url('/public/imgs/green_main5.png');
+  background-size: cover;
+  background-position: center;
+
+  background-repeat: no-repeat;
+  /* background-color: #1dd1a1; */
+}
+
+.navbarMenu {
+  display: flex;
+  color: white;
+  font-weight: 600;
+}
+
+.navbarMenu.div {
+  position: relative;
+}
+
+.navbarMenuItem {
+  padding: 4px 6px;
+  margin: 0 8px;
+  /* /border: solid #acffe9 2px; */
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.goBack {
+  padding: 0px 0px;
+  display: inline;
+  list-style: none;
+  /* border: solid #acffe9 2px; */
+  border-radius: 4px;
+  font-size: x-large;
+  cursor: pointer;
+}
+
+.goBack:hover {
+  /* background-color: #b4ffe2; */
+  /* transition: background-color 250ms linear; */
+}
+
+/* #1dd1a1 */
+/* #10ac84 */
+.navbarMenuItem:hover {
+  /* background-color: #b4ffe2; */
+  transition: color 250ms linear;
+  color: #1dd1a1;
+}
+
 button {
   background-color: #badc58;
   border: none;
@@ -140,6 +212,7 @@ button {
 .aloneBox,
 .groupBox {
   width: 450px;
+  position: relative;
 }
 
 .aloneBox {
@@ -166,8 +239,26 @@ button {
   left: 35%;
 }
 
+.groupBox button {
+  position: absolute;
+  margin: 22% 0;
+}
+
 .groupBox button a {
   text-decoration: none;
+}
+
+/* 지혜_추가1 */
+.groupButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+/* 지혜_추가2 */
+.groupBox .selectGroup {
+  display: flex;
+  justify-content: center;
+  margin-top: 30%;
 }
 
 /* aloneStudy.html */
@@ -204,10 +295,6 @@ button {
   font-family: cursive;
   line-height: 70px;
   border-radius: 20px 0 0 0;
-}
-
-.statisticsBox .statisticsTitle {
-  border-radius: 0 20px 0 0;
 }
 
 .aloneToDoBox .subjectTitle input {
@@ -278,6 +365,31 @@ button {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/* aloneStudy.html > statistics */
+
+.statisticsBox .statisticsTitle {
+  border-radius: 0 20px 0 0;
+}
+
+.statisticsBox .inputDate {
+  display: inline-block;
+  text-align: center;
+  margin-left: 30%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.statisticsBox .typeSelect {
+  display: flex;
+  justify-content: space-around;
+}
+
+.statisticsBox .main {
+  /* width: 430px; */
+  margin-right: 20px;
+  margin-top: 100px;
 }
 
 /* popup_studying.html */
