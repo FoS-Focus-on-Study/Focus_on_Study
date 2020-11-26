@@ -383,9 +383,13 @@ button {
 .statisticsBox .main {
   /* width: 430px; */
   margin-right: 20px;
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
+.statisticsBox .main .text {
+  text-align: center;
+  font-size: 20px;
+}
 /* popup_studying.html */
 
 .studyingPopupFrame {
