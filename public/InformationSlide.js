@@ -1,22 +1,22 @@
 const slideButtonPrev = document.querySelector(
-  ".siteInformationBox .slideBox button.prev"
+  '.siteInformationBox .slideBox button.prev',
 );
 slideButtonNext = document.querySelector(
-  ".siteInformationBox .slideBox button.next"
+  '.siteInformationBox .slideBox button.next',
 );
 firstSlide = document.querySelector(
-  ".siteInformationBox .slideBox .slideImages img:first-child"
+  '.siteInformationBox .slideBox .slideImages img:first-child',
 );
 lastSlide = document.querySelector(
-  ".siteInformationBox .slideBox .slideImages img:last-child"
+  '.siteInformationBox .slideBox .slideImages img:last-child',
 );
 
-const SHOWING_CLASS = "showing";
+const SHOWING_CLASS = 'showing';
 
 function movePrevEvent() {
   // slideBox.style.backgroundImage = "url('./images/slideImage3.jpg')"
   const currentSlide = document.querySelector(
-    ".siteInformationBox .slideImages img.showing"
+    '.siteInformationBox .slideImages img.showing',
   );
 
   if (currentSlide) {
@@ -33,7 +33,7 @@ function movePrevEvent() {
 function moveNextEvent() {
   // slideBox.style.backgroundImage = "url('./images/slideImage2.jpg')"
   const currentSlide = document.querySelector(
-    ".siteInformationBox .slideImages img.showing"
+    '.siteInformationBox .slideImages img.showing',
   );
   if (currentSlide) {
     currentSlide.classList.remove(SHOWING_CLASS);
