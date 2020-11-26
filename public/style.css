@@ -167,7 +167,13 @@ button {
 
 .siteInformationBox .information p {
   font-size: 20px;
+  display: none;
 }
+
+.siteInformationBox .information p.showing {
+  display: block;
+}
+
 /* signUp.html */
 
 .signUpFrame {
