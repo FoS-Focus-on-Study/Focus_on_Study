@@ -1,7 +1,9 @@
 *:not(html) {
   padding: 10px 0px;
 }
+
 /* Navbar */
+
 ul {
   list-style: none;
   margin: 0;
@@ -10,7 +12,7 @@ ul {
 body {
   padding: 0;
   margin: 0;
-  background-image: url('/public/imgs/simple+basic-square+note-1.png');
+  /* background-image: url('/public/imgs/simple+basic-square+note-1.png'); */
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
@@ -81,6 +83,8 @@ a {
   transition: color 250ms linear;
   color: #1dd1a1;
 }
+
+/* Navbar */
 
 button {
   background-color: #badc58;
