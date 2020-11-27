@@ -11,13 +11,20 @@
     <nav id="navbar">
       <div class="navbarLogo">
         <div class="goBack">
-          <a href="./groupStudy.html">⇦</a>
+          <a href="./groupStudy.html">
+            <!-- ⇦ -->
+            <img
+              src="/public/imgs/goback.png"
+              class="goBack btn"
+              alt="뒤로가기버튼"
+            />
+          </a>
         </div>
         <a href="#" class="navbarLogo">Focus on Study</a>
       </div>
       <div class="navbarMenu">
         <ul class="navbarMenu">
-          <li class="navbarMenuItem">My page</li>
+          <li class="navbarMenuItem">Profile</li>
           <li class="navbarMenuItem">Logout</li>
         </ul>
       </div>
@@ -26,13 +33,13 @@
   </body>
   <script>
     const groupStartBtn = document.querySelector(
-      ".groupToDoBox .subjectTitle button"
+      '.groupToDoBox .subjectTitle button',
     );
 
     function onloadGroupStudyPage() {
-      const option = "top=100px left=100px width=350px, height=500px";
+      const option = 'top=100px left=100px width=350px, height=500px';
 
-      window.open("./popup_studying.html", "popup_studying", option);
+      window.open('./popup_studying.html', 'popup_studying', option);
     }
 
     window.onload = onloadGroupStudyPage;

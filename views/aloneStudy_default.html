@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alone Study</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pageFrame">
+        <div class="aloneToDoBox">
+            <div class="toDoTitle">To Do List</div>
+            <div class="subjectList">
+                <div class="subjectBox hide">
+                    <div class="subjectTitle">
+                        <input class="text" placeholder="과목명"></input>
+                        <span class="toggle" >🔼</span>
+                        <button class="startButton">▶</button>
+                        <button class="deleteButton">X</button>
+                    </div>
+                    <div class="details open">
+                        <ul class="toDoList">
+                            <li><input type="checkbox">
+                                <input type="text" class="toDoContent"
+                                    placeholder="공부할 내용">
+                                <button class="deleteButton">X</button>
+                            </li>
+                        </ul>
+                        <button class="toDoAddButton">+</button>
+                    </div> 
+                </div>
+            </div>
+            
+            <button class="subjectAddButton">+</button>
+        </div>
+        <div class="statisticsBox">
+            <div class="statisticsTitle">Statistics</div>
+        </div>
+    </div>
+</body>
+<script>
+    
+</script>
+<script src="/public/toDo.js"></script>
+<script src="/public/statistics.js"></script>
+</html>

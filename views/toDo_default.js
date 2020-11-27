@@ -1,25 +1,32 @@
-const subjectList = document.querySelector(".aloneToDoBox .subjectList"),
-  subjectBox = document.querySelector(".aloneToDoBox .subjectBox.hide"),
+const subjectList = document.querySelector('.aloneToDoBox .subjectList'),
+  subjectBox = document.querySelector('.aloneToDoBox .subjectBox.hide'),
   subjectToggle = document.querySelector(
-    ".aloneToDoBox .subjectBox.hide .subjectTitle span.toggle"
+    '.aloneToDoBox .subjectBox.hide .subjectTitle span.toggle',
   ),
-  toDoBox = document.querySelector(".aloneToDoBox .subjectBox.hide .details"),
-  subjectAddButton = document.querySelector(".aloneToDoBox .subjectAddButton"),
+  toDoBox = document.querySelector('.aloneToDoBox .subjectBox.hide .details'),
+  subjectAddButton = document.querySelector('.aloneToDoBox .subjectAddButton'),
   subjectDeleteBtn = document.querySelector(
-    ".aloneToDoBox .subjectBox.hide .subjectTitle .deleteButton"
+    '.aloneToDoBox .subjectBox.hide .subjectTitle .deleteButton',
   ),
   toDoListUl = document.querySelector(
-    ".aloneToDoBox .subjectBox.hide .details ul"
+    '.aloneToDoBox .subjectBox.hide .details ul',
   ),
   toDoLi = document.querySelector(
-    ".aloneToDoBox .subjectBox.hide .details ul li"
+    '.aloneToDoBox .subjectBox.hide .details ul li',
   ),
   toDoAddButton = document.querySelector(
-    ".aloneToDoBox .subjectBox.hide .details .toDoAddButton"
+    '.aloneToDoBox .subjectBox.hide .details .toDoAddButton',
   ),
   toDoDeleteButton = document.querySelector(
-    ".aloneToDoBox .subjectBox.hide .details li .deleteButton"
-  );
+    '.aloneToDoBox .subjectBox.hide .details li .deleteButton',
+  ),
+  aloneStartBtn = document.querySelector('.aloneToDoBox .subjectTitle button');
+
+function openAloneStudyPage() {
+  const option = 'width=350px, height=500px';
+
+  window.open('./popup_studying.html', 'popup_studying', option);
+}
 
 function init() {
   addSubjectEvent();
@@ -36,13 +43,13 @@ function clickToggleEvent(e) {
   const toDoBox = toggleBtn.parentNode.nextElementSibling;
   // console.log(toggleBtn.parentNode.nextElementSibling);
 
-  if (toggleBtn.innerHTML === "🔼") {
-    toggleBtn.innerHTML = "🔽";
+  if (toggleBtn.innerHTML === '🔼') {
+    toggleBtn.innerHTML = '🔽';
   } else {
-    toggleBtn.innerHTML = "🔼";
+    toggleBtn.innerHTML = '🔼';
   }
 
-  toDoBox.classList.toggle("open");
+  toDoBox.classList.toggle('open');
 }
 
 function addSubjectEvent(e) {
@@ -64,7 +71,7 @@ function addSubjectEvent(e) {
   const toDoDeleteButton =
     newToDoAddButton.previousElementSibling.firstElementChild.lastElementChild;
   toDoDeleteButton.onclick = deleteToDoEvent;
-  addedSubject.classList.remove("hide");
+  addedSubject.classList.remove('hide');
   // console.log(addedSubject.firstElementChild.childNodes[3]);
   // console.log(addedSubject.firstElementChild.lastElementChild);
   subjectList.appendChild(addedSubject);

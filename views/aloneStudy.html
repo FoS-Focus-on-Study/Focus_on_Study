@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alone Study</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbarLogo">
+            <div class="goBack">
+            <a href="./typeSelection.html">
+                <!-- ⇦ -->
+                <img src="/public/imgs/goback.png" class = "goBack btn" alt="뒤로가기버튼">
+            </a>
+            </div>
+            <a href="#" class="navbarLogo">Focus on Study</a>
+        </div>
+        <div class="navbarMenu div">
+            <ul class="navbarMenu">
+            <li class="navbarMenuItem">Profile</li>
+            <li class="navbarMenuItem">Logout</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="pageFrame">
+        <div class="aloneToDoBox">
+            <div class="toDoTitle">To Do List</div>
+            <div class="subjectList">
+            {% for subj in subjects %}    
+                <div class="subjectBox">    
+                    <div class="subjectTitle">
+                        <span class="text">{{subj.name}}</span>
+                        <span class="toggle" onclick="clickToggleEvent(this)" >🔼</span>
+                        <button class="startButton">▶</button>
+                        <button class="deleteButton" >X</button>
+                    </div>
+                    <div class="details open">
+                        <ul class="toDoList">
+                            <li><input type="checkbox">
+                                <input type="text" class="toDoContent"
+                                    placeholder="공부할 내용">
+                                <button class="deleteButton" onclick="deleteToDoEvent(this)">X</button>
+                            </li>
+                        </ul>
+                        <button class="toDoAddButton" onclick="addToDoEvent(this)">+</button>
+                    </div> 
+                </div>
+            {% endfor %}
+                <div class="subjectBox hide"> 
+                    <div class="subjectTitle">
+                        <form action="/typeSelection/aloneStudy/addSubject" method="post" class="addSubject">
+                            <input class="text" name="name" placeholder="과목명"></input>
+                            <button type="submit" class="dbAddButton" >추가</button>
+                        </form>
+                        <span class="toggle" onclick="clickToggleEvent(this)" >🔼</span>
+                        <!-- <button class="startButton">▶</button> -->
+                        <button class="deleteButton">X</button>
+                    </div>
+                    <div class="details open">
+                        <ul class="toDoList">
+                            <li><input type="checkbox">
+                                <input type="text" class="toDoContent"
+                                    placeholder="공부할 내용">
+                                <button class="deleteButton" onclick="deleteToDoEvent(this)"v>X</button>
+                            </li>
+                        </ul>
+                        <button class="toDoAddButton" onclick="addToDoEvent(this)">+</button>
+                    </div> 
+                </div>
+            </div>
+            
+            <!-- <button class="subjectAddButton">+</button> -->
+        </div>
+        <div class="statisticsBox">
+            <div class="statisticsTitle">Statistics</div>
+            <form action="" class="sendDate">
+              <input type="date" class="inputDate" >
+              <input type="submit" class="submitBtn" value="보기">
+            </form>
+            <div class="typeSelect">
+                <button class="daily">일별</button>
+                <button class="weekly">주별</button>
+                <button class="monthly">월별</button>
+            </div>
+            <div class="main">
+                <canvas id="myChart"></canvas>
+                <p class="text"></p>
+            </div>
+        </div>  
+    </div>
+</body>
+
+<script src="/public/studying.js"></script>
+<script src="/public/toDo.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="/public/statistics.js"></script>
+</html>
