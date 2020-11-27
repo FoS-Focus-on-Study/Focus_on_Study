@@ -12,7 +12,7 @@ ul {
 body {
   padding: 0;
   margin: 0;
-  /* background-image: url('/public/imgs/simple+basic-square+note-1.png'); */
+  background-image: url('/public/imgs/background1.png');
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
@@ -29,12 +29,17 @@ a {
   justify-content: space-between;
   align-items: center;
   padding-top: 0;
-  padding: 25px;
-  background-image: url('/public/imgs/green_main5.png');
+  padding: 10px;
+  background-image: url('/public/imgs/cloud_main1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   /* background-color: #1dd1a1; */
+}
+
+.navbarLogo {
+  padding-top: 0px;
+  padding-bottom: 10px;
 }
 
 .navbarMenu {
@@ -79,9 +84,12 @@ a {
 /* #1dd1a1 */
 /* #10ac84 */
 .navbarMenuItem:hover {
-  /* background-color: #b4ffe2; */
-  transition: color 250ms linear;
-  color: #1dd1a1;
+  /* padding: auto; */
+  /* margin: auto; */
+  /* border: 1px solid lightblue; */
+  border-radius: 20%;
+  transition: all 250ms linear;
+  color: #b4ffe2;
 }
 
 /* Navbar */
@@ -230,12 +238,12 @@ button {
 
 .aloneBox {
   /* border-right: 1px dotted black; */
-  background-color: #55efc4;
+  /* background-color: #55efc4; */
   border-radius: 20px;
 }
 
 .groupBox {
-  background-color: #ff7675;
+  /* background-color: #ff7675; */
   border-radius: 20px;
 }
 
