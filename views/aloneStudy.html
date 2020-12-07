@@ -30,46 +30,29 @@
                 <div class="subjectBox">    
                     <div class="subjectTitle">
                         <span class="text">{{subj.name}}</span>
-                        <span class="toggle" onclick="clickToggleEvent(this)" >🔼</span>
+                        <span class="toggle" onclick="clickToggleEvent(this);
+                            loadToDoEvent(this) " >🔽</span>
                         <button class="startButton">▶</button>
-                        <button class="deleteButton" >X</button>
+                        <button class="deleteButton">X</button>
                     </div>
-                    <div class="details open">
-                        <ul class="toDoList">
-                            <li><input type="checkbox">
-                                <input type="text" class="toDoContent"
-                                    placeholder="공부할 내용">
-                                <button class="deleteButton" onclick="deleteToDoEvent(this)">X</button>
-                            </li>
-                        </ul>
-                        <button class="toDoAddButton" onclick="addToDoEvent(this)">+</button>
+                    <div class="details">
+                        <form action="" class="formToDo" onsubmit="javascript:submitToDoForm(event)">
+                            <input type="text" class="toDoContent" placeholder="Add Todo">
+                        </form>
+                        <button class="toDoClearBtn" onclick="clearToDoEvent(this)">모두지우기</button>
+                        <ul class="toDoList"></ul>
                     </div> 
                 </div>
             {% endfor %}
-                <div class="subjectBox hide"> 
+                <div class="subjectBox"> 
                     <div class="subjectTitle">
                         <form action="/typeSelection/aloneStudy/addSubject" method="post" class="addSubject">
                             <input class="text" name="name" placeholder="과목명"></input>
                             <button type="submit" class="dbAddButton" >추가</button>
                         </form>
-                        <span class="toggle" onclick="clickToggleEvent(this)" >🔼</span>
-                        <!-- <button class="startButton">▶</button> -->
-                        <button class="deleteButton">X</button>
                     </div>
-                    <div class="details open">
-                        <ul class="toDoList">
-                            <li><input type="checkbox">
-                                <input type="text" class="toDoContent"
-                                    placeholder="공부할 내용">
-                                <button class="deleteButton" onclick="deleteToDoEvent(this)"v>X</button>
-                            </li>
-                        </ul>
-                        <button class="toDoAddButton" onclick="addToDoEvent(this)">+</button>
-                    </div> 
                 </div>
             </div>
-            
-            <!-- <button class="subjectAddButton">+</button> -->
         </div>
         <div class="statisticsBox">
             <div class="statisticsTitle">Statistics</div>
