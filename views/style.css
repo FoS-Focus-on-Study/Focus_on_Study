@@ -1,13 +1,119 @@
-* {
-  padding: 10px;
+*:not(html) {
+  padding: 10px 0px;
 }
+
+/* Navbar */
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+body:not(.popup) {
+  padding: 0;
+  margin: 0;
+  background-image: url('/public/imgs/background1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+
+body.popup {
+  background-image: url('/public/imgs/background-weak-grid.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+}
+
+/* Navbar */
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  padding: 10px;
+  background-image: url('/public/imgs/cloud_main1.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.navbarLogo {
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+.navbarLogo:hover {
+  text-underline-position: under;
+  text-shadow: 2px 2px 2px gray;
+}
+
+.navbarMenu {
+  display: flex;
+  color: white;
+  font-weight: 600;
+}
+
+.navbarMenu.div {
+  position: relative;
+}
+
+.navbarMenuItem {
+  padding: 4px 6px;
+  margin: 0 8px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.goBack {
+  padding: 0px 0px;
+  display: inline;
+  list-style: none;
+  border-radius: 4px;
+  font-size: x-large;
+  cursor: pointer;
+}
+.goBack .btn {
+  margin-top: 20px;
+  padding-right: 15px;
+  width: 40px;
+  height: 25px;
+}
+
+/* #1dd1a1 */
+/* #10ac84 */
+.navbarMenuItem:hover {
+  border-radius: 20%;
+  transition: all 250ms linear;
+  color: #b4ffe2;
+  text-decoration: underline solid 3px #b4ffe2;
+  text-underline-position: under;
+}
+
 button {
-  background-color: #badc58;
+  background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-.pageFrame {
+.pageFrame.typeSelect {
+  width: 900px;
+  height: 700px;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-flow: row;
+  border-radius: 20px;
+}
+
+.pageFrame.Study {
   width: 900px;
   height: 700px;
   padding: 0;
@@ -135,39 +241,73 @@ button {
   margin-top: 10px;
 }
 
-/* tyleSelection.html */
+/* typeSelection.html */
 
 .aloneBox,
 .groupBox {
   width: 450px;
+  position: relative;
 }
 
 .aloneBox {
-  /* border-right: 1px dotted black; */
-  background-color: #55efc4;
+  margin-top: 170px;
   border-radius: 20px;
+  display: relative;
 }
 
-.groupBox {
-  background-color: #ff7675;
-  border-radius: 20px;
+.groupBox .selectGroup {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30%;
+  /* margin-bottom: 150px; */
 }
 
-.aloneBox .text,
-.groupBox .text {
-  font-size: 70px;
+.pageFrame.typeSelect button {
+  width: 200px;
+  height: 40px;
+  font-size: 80px;
   font-family: cursive;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  /* margin-top: 100px; */
+  transition: all 200ms linear;
 }
 
-.aloneBox button,
-.groupBox button {
-  position: relative;
-  top: 40%;
-  left: 35%;
+.pointer_img {
+  /* position: absolute; */
+  background-image: url('/public/imgs/Bold-pointer.png');
+  background-size: cover;
+  display: flex;
+  margin: 0 0 0 300px;
+  width: 120px;
+  height: 100px;
+  transition: all 200ms ease-in;
+  /* opacity: 0; */
 }
 
-.groupBox button a {
-  text-decoration: none;
+.aloneButton:hover,
+.groupButton:hover {
+  color: #1dd1a1;
+  text-shadow: 2px 2px 2px gray;
+  opacity: 1;
+  /* transform: translateY(0px); */
+}
+
+/* .pointer_img:hover {
+  opacity: 1;
+} */
+
+.aloneButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 600px;
+}
+
+.groupButton {
+  margin-top: 400px;
 }
 
 /* aloneStudy.html */
@@ -204,10 +344,6 @@ button {
   font-family: cursive;
   line-height: 70px;
   border-radius: 20px 0 0 0;
-}
-
-.statisticsBox .statisticsTitle {
-  border-radius: 0 20px 0 0;
 }
 
 .aloneToDoBox .subjectTitle input {
@@ -278,6 +414,31 @@ button {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
+}
+
+/* aloneStudy.html > statistics */
+
+.statisticsBox .statisticsTitle {
+  border-radius: 0 20px 0 0;
+}
+
+.statisticsBox .inputDate {
+  display: inline-block;
+  text-align: center;
+  margin-left: 30%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.statisticsBox .typeSelect {
+  display: flex;
+  justify-content: space-around;
+}
+
+.statisticsBox .main {
+  /* width: 430px; */
+  margin-right: 20px;
+  margin-top: 100px;
 }
 
 /* popup_studying.html */
