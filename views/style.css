@@ -9,13 +9,20 @@ ul {
   margin: 0;
 }
 
-body {
+body:not(.popup) {
   padding: 0;
   margin: 0;
-  /* background-image: url('/public/imgs/simple+basic-square+note-1.png'); */
+  background-image: url('/public/imgs/background1.png');
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
+}
+
+body.popup {
+  background-image: url('/public/imgs/background-weak-grid.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -24,17 +31,28 @@ a {
   font-size: x-large;
 }
 
+/* Navbar */
+
 #navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 0;
-  padding: 25px;
-  background-image: url('/public/imgs/green_main5.png');
+  padding: 10px;
+  background-image: url('/public/imgs/cloud_main1.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* background-color: #1dd1a1; */
+}
+
+.navbarLogo {
+  padding-top: 0px;
+  padding-bottom: 10px;
+}
+
+.navbarLogo:hover {
+  text-underline-position: under;
+  text-shadow: 2px 2px 2px gray;
 }
 
 .navbarMenu {
@@ -50,7 +68,6 @@ a {
 .navbarMenuItem {
   padding: 4px 6px;
   margin: 0 8px;
-  /* /border: solid #acffe9 2px; */
   cursor: pointer;
   border-radius: 4px;
 }
@@ -59,7 +76,6 @@ a {
   padding: 0px 0px;
   display: inline;
   list-style: none;
-  /* border: solid #acffe9 2px; */
   border-radius: 4px;
   font-size: x-large;
   cursor: pointer;
@@ -71,28 +87,33 @@ a {
   height: 25px;
 }
 
-.goBack:hover {
-  /* background-color: #b4ffe2; */
-  /* transition: background-color 250ms linear; */
-}
-
 /* #1dd1a1 */
 /* #10ac84 */
 .navbarMenuItem:hover {
-  /* background-color: #b4ffe2; */
-  transition: color 250ms linear;
-  color: #1dd1a1;
+  border-radius: 20%;
+  transition: all 250ms linear;
+  color: #b4ffe2;
+  text-decoration: underline solid 3px #b4ffe2;
+  text-underline-position: under;
 }
 
-/* Navbar */
-
 button {
-  background-color: #badc58;
+  background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-.pageFrame {
+.pageFrame.typeSelect {
+  width: 900px;
+  height: 700px;
+  padding: 0;
+  margin: auto;
+  display: flex;
+  flex-flow: row;
+  border-radius: 20px;
+}
+
+.pageFrame.Study {
   width: 900px;
   height: 700px;
   padding: 0;
@@ -220,7 +241,7 @@ button {
   margin-top: 10px;
 }
 
-/* tyleSelection.html */
+/* typeSelection.html */
 
 .aloneBox,
 .groupBox {
@@ -229,49 +250,64 @@ button {
 }
 
 .aloneBox {
-  /* border-right: 1px dotted black; */
-  background-color: #55efc4;
+  margin-top: 170px;
   border-radius: 20px;
+  display: relative;
 }
 
-.groupBox {
-  background-color: #ff7675;
-  border-radius: 20px;
-}
-
-.aloneBox .text,
-.groupBox .text {
-  font-size: 70px;
-  font-family: cursive;
-}
-
-.aloneBox button,
-.groupBox button {
-  position: relative;
-  top: 40%;
-  left: 35%;
-}
-
-.groupBox button {
-  position: absolute;
-  margin: 22% 0;
-}
-
-.groupBox button a {
-  text-decoration: none;
-}
-
-/* 지혜_추가1 */
-.groupButton {
-  display: flex;
-  justify-content: center;
-  margin-top: 60px;
-}
-/* 지혜_추가2 */
 .groupBox .selectGroup {
+  margin: auto;
   display: flex;
   justify-content: center;
+  text-align: center;
   margin-top: 30%;
+  /* margin-bottom: 150px; */
+}
+
+.pageFrame.typeSelect button {
+  width: 200px;
+  height: 40px;
+  font-size: 80px;
+  font-family: cursive;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  /* margin-top: 100px; */
+  transition: all 200ms linear;
+}
+
+.pointer_img {
+  /* position: absolute; */
+  background-image: url('/public/imgs/Bold-pointer.png');
+  background-size: cover;
+  display: flex;
+  margin: 0 0 0 300px;
+  width: 120px;
+  height: 100px;
+  transition: all 200ms ease-in;
+  /* opacity: 0; */
+}
+
+.aloneButton:hover,
+.groupButton:hover {
+  color: #1dd1a1;
+  text-shadow: 2px 2px 2px gray;
+  opacity: 1;
+  /* transform: translateY(0px); */
+}
+
+/* .pointer_img:hover {
+  opacity: 1;
+} */
+
+.aloneButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 600px;
+}
+
+.groupButton {
+  margin-top: 400px;
 }
 
 /* aloneStudy.html */
