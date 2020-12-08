@@ -1,5 +1,5 @@
 *:not(html) {
-  padding: 10px 0px;
+  padding: 10px;
 }
 
 /* Navbar */
@@ -29,6 +29,10 @@ a {
   text-decoration: none;
   color: white;
   font-size: x-large;
+}
+
+input {
+  background-color: transparent;
 }
 
 /* Navbar */
@@ -253,10 +257,11 @@ button {
 .groupBox {
   width: 450px;
   position: relative;
+  margin-top: 50px;
 }
 
 .aloneBox {
-  margin-top: 170px;
+  margin-top: 220px;
   border-radius: 20px;
   display: relative;
 }
