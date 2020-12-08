@@ -328,20 +328,34 @@ button {
   display: block;
 }
 
+.aloneToDoBox .subjectBox .details .formToDo {
+  display: inline-block;
+}
+
+.aloneToDoBox .subjectBox .details .toDoContent {
+  border: none;
+  border-bottom: 1px black solid;
+  padding: 5px;
+  margin-left: 15px;
+}
+
+.aloneToDoBox .subjectBox .details .toDoClearBtn {
+  border: 1px solid black;
+  margin-left: 70px;
+}
+
 .aloneToDoBox .subjectBox .details ul {
   list-style: none;
   margin: 5px;
   padding: 0;
 }
-
-.aloneToDoBox .subjectBox .details ul .toDoContent {
-  border: none;
-  border-bottom: 1px black solid;
-  padding: 5px;
-}
-
 .aloneToDoBox .subjectBox .details ul li {
   padding: 5px;
+  margin-left: 15px;
+}
+
+.aloneToDoBox .subjectBox .details ul li span.checked {
+  text-decoration: line-through;
 }
 
 .aloneToDoBox .subjectBox .details button {
@@ -443,7 +457,7 @@ button {
   border-radius: 15px;
   cursor: pointer;
 }
-.studyingPopupFrame .toDoList ul {
+.studyingPopupFrame ul.toDoList {
   list-style: none;
   padding: 0;
   margin: 0;

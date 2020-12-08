@@ -10,9 +10,9 @@
     <div class="studyingPopupFrame">
       <div class="timeBox">
         <div class="subjectName">Node.js 교과서</div>
-        <div class="subjectTime">01:23:30</div>
-        <div class="todayStudyTime">study : 02:30:55</div>
-        <div class="todayRestTime">rest : 00:30:00</div>
+        <div class="subjectTime">00:00:00</div>
+        <div class="todayStudyTime">study : 00:00:00</div>
+        <div class="todayRestTime">rest : 00:00:00</div>
       </div>
       <div class="restOrExit">
         <button class="rest">휴식</button>
@@ -27,13 +27,46 @@
     </div>
   </body>
   <script>
-    const startRestBtn = document.querySelector(
-      '.studyingPopupFrame .restOrExit .rest',
-    );
+    const subjectTime = document.querySelector('.timeBox .subjectTime');
+    const todayStudyTime = document.querySelector('.timeBox .todayStudyTime');
+    let subjectSec = 0,
+      todayStudySec = 0;
 
-    startRestBtn.onclick = () => {
-      const option = 'top=150px left=150px width=350px height=200px';
-      window.open('./setRestTime.html', 'setRestTime', option);
-    };
+    function sec_To_HHMMSS(sec) {
+      const hour = Math.floor(sec / 3600);
+      const min = Math.floor((sec % 3600) / 60);
+      const rest = (sec % 3600) % 60;
+      const result =
+        `${hour >= 10 ? hour : `0${hour}`}:` +
+        `${min >= 10 ? min : `0${min}`}:` +
+        `${rest >= 10 ? rest : `0${rest}`}`;
+
+      return result;
+      // console.log(hour, min, rest);
+    }
+
+    function stopwatch() {
+      subjectSec++;
+      todayStudySec++;
+      // console.log(subjectSec);
+
+      subjectTime.innerHTML = sec_To_HHMMSS(subjectSec);
+      todayStudyTime.innerHTML = `study : ${sec_To_HHMMSS(todayStudySec)}`;
+    }
+
+    function init() {
+      const studyInterval = setInterval(stopwatch, 1000);
+
+      const startRestBtn = document.querySelector(
+        '.studyingPopupFrame .restOrExit .rest',
+      );
+
+      startRestBtn.onclick = () => {
+        const option = 'top=150px left=150px width=350px height=200px';
+        window.open('./setRestTime.html', 'setRestTime', option);
+      };
+    }
+
+    init();
   </script>
 </html>
