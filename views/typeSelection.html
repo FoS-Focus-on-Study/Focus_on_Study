@@ -25,39 +25,36 @@
         </ul>
       </div>
     </nav>
-    <div class="pageFrame">
+    <div class="pageFrame typeSelect">
       <div class="aloneBox">
-        <div class="text">Alone</div>
-        <button
+        <div class="select_button">
+      <div class="pointer_img"></div> 
+      <button
           type="button"
           class="aloneButton"
           onclick="location.href='aloneStudy.html'"
         >
-          혼자 공부하기
-        </button>
-      </div>
+          Alone
+      </button>
+    </div> 
+    </div>
       <div class="groupBox">
-        <div class="text">Group</div>
-        <form action="./groupStudy.html">
-          <div class="selectGroup">
-            <select>
+        <form action="groupStudy.html">    
+            <select class="selectGroup">
               <option value="1팀">1팀</option>
               <option value="2팀">2팀</option>
             </select>
-          </div>
-          <div class="groupButton">
-            <button 
+            <!-- <div class="select_button"> -->
+            <div class="pointer_img"></div> 
+            <button
               type="button"
-              class="groupButton grpbtn"
-              onclick="location.href='groupStudy.html'"
-            >
-              그룹 공부하기
+              class="groupButton"
+              onclick="location.href='groupStudy.html'">
+              Group
             </button>
-          </div>
-          <!-- <button class="groupButton">
-              <a href="#"> 그룹 공부하기</a>
-            </button> -->
-        </form>
+          <!-- </div> -->
+         
+      </form>
         </button>
       </div>
     </div>
