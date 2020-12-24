@@ -1,41 +1,89 @@
-const subjectList = document.querySelector('.aloneToDoBox .subjectList'),
-  subjectBox = document.querySelector('.aloneToDoBox .subjectBox.hide'),
-  subjectToggle = document.querySelector(
-    '.aloneToDoBox .subjectBox.hide .subjectTitle span.toggle',
-  ),
-  toDoBox = document.querySelector('.aloneToDoBox .subjectBox.hide .details'),
-  subjectAddButton = document.querySelector('.aloneToDoBox .subjectAddButton'),
-  subjectDeleteBtn = document.querySelector(
-    '.aloneToDoBox .subjectBox.hide .subjectTitle .deleteButton',
-  ),
-  toDoListUl = document.querySelector(
-    '.aloneToDoBox .subjectBox.hide .details ul',
-  ),
-  toDoLi = document.querySelector(
-    '.aloneToDoBox .subjectBox.hide .details ul li',
-  ),
-  toDoAddButton = document.querySelector(
-    '.aloneToDoBox .subjectBox.hide .details .toDoAddButton',
-  ),
-  toDoDeleteButton = document.querySelector(
-    '.aloneToDoBox .subjectBox.hide .details li .deleteButton',
-  );
+const subjectList = document.querySelector('.aloneToDoBox .subjectList');
 
-function init() {
-  addSubjectEvent();
-  // subjectToggle.onclick = clickToggleEvent;
-  // subjectAddButton.onclick = addSubjectEvent;
-  subjectDeleteBtn.onclick = deleteSubjectEvent;
-  // toDoAddButton.onclick = addToDoEvent;
-  // toDoDeleteButton.onclick = deleteToDoEvent;
-  aloneStartBtn.onclick = openAloneStudyPage;
+function checkboxChangeEvent(event) {
+  const checkbox = event.target;
+  const span = checkbox.nextElementSibling;
+  span.classList.toggle('checked');
+}
+
+function deleteToDoEvent(e) {
+  const li = e.currentTarget.parentNode;
+  const ul = li.parentNode;
+  const subjectName =
+    ul.parentNode.previousElementSibling.firstElementChild.innerHTML;
+
+  /* 로컬스토리지에서 삭제 */
+  const LS_todos = localStorage.getItem(`FoS_${subjectName}`);
+  let todos = JSON.parse(LS_todos);
+
+  const index = todos.findIndex((i) => i.id === li.id);
+  todos.splice(index, 1);
+
+  localStorage.setItem(`FoS_${subjectName}`, JSON.stringify(todos));
+
+  /* 화면에서 삭제 */
+  ul.removeChild(li);
+}
+
+// todo 추가시 화면에 생성.
+function paintToDo(form) {
+  const ul = form.nextElementSibling.nextElementSibling,
+    inputedText = form.firstElementChild.value;
+
+  const li = document.createElement('li'),
+    input = document.createElement('input'),
+    span = document.createElement('span'),
+    btn = document.createElement('button');
+
+  li.appendChild(input);
+  li.appendChild(span);
+  li.appendChild(btn);
+  ul.appendChild(li);
+
+  li.id = `todo${parseInt(localStorage.getItem('newId')) - 1}`;
+  input.type = 'checkbox';
+  input.addEventListener('change', checkboxChangeEvent);
+  span.innerHTML = inputedText;
+  btn.innerHTML = 'x';
+  btn.addEventListener('click', deleteToDoEvent);
+
+  form.firstElementChild.value = '';
+}
+
+// todo 추가시 로컬스토리지에 저장.
+function saveToDo(form) {
+  const subjectName =
+    form.parentNode.previousElementSibling.firstElementChild.innerHTML;
+
+  const LS_todos = localStorage.getItem(`FoS_${subjectName}`);
+
+  // todo 객체들을 담을 배열
+  let todos = [];
+  if (LS_todos !== null) {
+    todos = JSON.parse(LS_todos);
+  }
+
+  const text = form.firstElementChild.value;
+  const newId = localStorage.getItem('newId');
+  localStorage.setItem('newId', parseInt(newId) + 1);
+  const todo = {
+    id: `todo${newId}`,
+    text,
+  };
+
+  todos.push(todo);
+  localStorage.setItem(`FoS_${subjectName}`, JSON.stringify(todos));
+}
+
+function submitToDoForm(e) {
+  e.preventDefault();
+  saveToDo(e.currentTarget);
+  paintToDo(e.currentTarget);
 }
 
 function clickToggleEvent(e) {
   const toggleBtn = e;
-  // console.log(e);
   const toDoBox = toggleBtn.parentNode.nextElementSibling;
-  // console.log(toggleBtn.parentNode.nextElementSibling);
 
   if (toggleBtn.innerHTML === '🔼') {
     toggleBtn.innerHTML = '🔽';
@@ -46,54 +94,66 @@ function clickToggleEvent(e) {
   toDoBox.classList.toggle('open');
 }
 
-function addSubjectEvent(e) {
-  const addedSubject = subjectBox.cloneNode(true);
+function clearToDoEvent(clearBtn) {
+  const subjectName =
+    clearBtn.parentNode.previousElementSibling.firstElementChild.innerHTML;
+  const ul = clearBtn.nextElementSibling;
 
-  const subjectDeleteBtn = addedSubject.firstElementChild.lastElementChild;
-  subjectDeleteBtn.onclick = deleteSubjectEvent;
-
-  const toggleBtn = addedSubject.firstElementChild.childNodes[3];
-  // toggleBtn.onclick = clickToggleEvent;
-
-  const aloneStartBtn = toggleBtn.nextElementSibling;
-  aloneStartBtn.onclick = openAloneStudyPage;
-
-  const newToDoAddButton = addedSubject.lastElementChild.lastElementChild;
-  // console.log(newToDoAddButton);
-  // newToDoAddButton.onclick = addToDoEvent;
-
-  const toDoDeleteButton =
-    newToDoAddButton.previousElementSibling.firstElementChild.lastElementChild;
-  // toDoDeleteButton.onclick = deleteToDoEvent;
-  addedSubject.classList.remove('hide');
-  // console.log(addedSubject.firstElementChild.childNodes[3]);
-  // console.log(addedSubject.firstElementChild.lastElementChild);
-  subjectList.appendChild(addedSubject);
+  ul.innerHTML = '';
+  localStorage.removeItem(`FoS_${subjectName}`);
 }
 
-function deleteSubjectEvent(e) {
-  // console.log(e.currentTarget);
+// 과목 삭제이벤트 (지훈씨가 구현?)
+// function deleteSubjectEvent(e) {
+//   const clickedSubject = e.currentTarget.parentNode.parentNode;
+//   subjectList.removeChild(clickedSubject);
+// }
 
-  const clickedSubject = e.currentTarget.parentNode.parentNode;
-  subjectList.removeChild(clickedSubject);
+// 페이지 로드시 로컬스토리지의 데이터를 화면에 생성.
+function paintToDo_LS(ul, todo) {
+  const li = document.createElement('li'),
+    input = document.createElement('input'),
+    span = document.createElement('span'),
+    btn = document.createElement('button');
+
+  li.appendChild(input);
+  li.appendChild(span);
+  li.appendChild(btn);
+  ul.appendChild(li);
+
+  li.id = todo.id;
+  input.type = 'checkbox';
+  input.addEventListener('change', checkboxChangeEvent);
+  span.innerHTML = todo.text;
+  btn.innerHTML = 'x';
+  btn.addEventListener('click', deleteToDoEvent);
 }
 
-function addToDoEvent(e) {
-  const addedToDo = toDoLi.cloneNode(true);
-  const clickedToDoUl = e.previousElementSibling;
-  clickedToDoUl.appendChild(addedToDo);
-  const newToDoDeleteButton = clickedToDoUl.lastElementChild.lastElementChild;
-  // console.log(newToDoDeleteButton);
-  // newToDoDeleteButton.onclick = deleteToDoEvent;
+/* 페이지 로드 후, toggle 버튼 누르면 해당 과목 todo를 localstorage에서 받아옴.  */
+function loadToDoEvent(toggleBtn) {
+  const subjectName = toggleBtn.previousElementSibling.innerHTML;
+  const ul = toggleBtn.parentNode.nextElementSibling.lastElementChild;
+  let todos = [];
+
+  // ul의 자식요소가 없을 경우(처음 페이지 로드시)
+  if (ul.firstElementChild === null) {
+    const LS_todos = localStorage.getItem(`FoS_${subjectName}`);
+    if (LS_todos !== null) {
+      todos = JSON.parse(LS_todos);
+      todos.forEach((element) => paintToDo_LS(ul, element));
+    }
+  }
 }
 
-function deleteToDoEvent(e) {
-  const clickedLi = e.parentNode,
-    clickedToDoUl = clickedLi.parentNode;
+function setLS_NewId() {
+  if (localStorage.getItem('newId') === null) {
+    localStorage.setItem('newId', 1);
+  }
+}
 
-  // console.log(clickedLi);
-
-  clickedToDoUl.removeChild(clickedLi);
+function init() {
+  setLS_NewId();
+  // subjectDeleteBtn.onclick = deleteSubjectEvent;
 }
 
 init();

@@ -31,6 +31,12 @@ a {
   font-size: x-large;
 }
 
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 /* Navbar */
 
 #navbar {
@@ -95,12 +101,6 @@ a {
   color: #b4ffe2;
   text-decoration: underline solid 3px #b4ffe2;
   text-underline-position: under;
-}
-
-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
 }
 
 .pageFrame.typeSelect {
@@ -355,8 +355,6 @@ button {
 .aloneToDoBox .subjectTitle button {
   padding: 3px;
   background-color: transparent;
-  /* border: solid beige 1px; */
-  border-radius: 15px;
   cursor: pointer;
 }
 
@@ -365,7 +363,18 @@ button {
 }
 
 .aloneToDoBox .subjectTitle .deleteButton {
+  width: 17px;
+  height: 25px;
+  background-image: url('/public/imgs/bin1.png');
+  background-repeat: no-repeat;
+  background-position: cover;
   float: right;
+}
+
+.aloneToDoBox .subjectTitle .deleteButton:hover {
+  background-image: url('/public/imgs/bin2.png');
+  background-repeat: no-repeat;
+  background-position: cover;
 }
 
 .aloneToDoBox .subjectBox .details {
@@ -482,12 +491,30 @@ button {
   border-bottom: 1px solid black;
 }
 .studyingPopupFrame .restOrExit button {
-  padding: 5px;
-  background-color: bisque;
+  padding: 11px;
   border: none;
-  border-radius: 15px;
   cursor: pointer;
 }
+
+.studyingPopupFrame .restOrExit .rest,
+.studyingPopupFrame .restOrExit .exit {
+  background-image: url('/public/imgs/restbtn1.png');
+  font-size: small;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.studyingPopupFrame .restOrExit .rest:hover {
+  background-image: url('/public/imgs/restbtn2.png');
+  font-weight: bolder;
+}
+
+.studyingPopupFrame .restOrExit .exit:hover {
+  background-image: url('/public/imgs/exitbtn1.png');
+  opacity: 0.9;
+  font-weight: bolder;
+}
+
 .studyingPopupFrame .toDoList ul {
   list-style: none;
   padding: 0;
@@ -497,7 +524,7 @@ button {
 /* setRestTime.html */
 
 .setRestTimeFrame {
-  width: 200px;
+  width: 220px;
   height: 100px;
   border: solid 1px black;
   margin: auto;
@@ -515,13 +542,27 @@ button {
   margin: 0 0 0 10px;
   text-align: right;
 }
+
+.setRestTimeFrame span {
+  cursor: default;
+  font-style: italic;
+}
+
 .setRestTimeFrame button {
+  background-image: url('/public/imgs/restbtn1.png');
+  background-repeat: no-repeat;
+  background-position: center;
   display: block;
   margin: 20px auto 5px auto;
-  width: 60px;
-  height: 30px;
+  width: 65px;
+  height: 37px;
   line-height: 30px;
   padding: 0;
+}
+
+.setRestTimeFrame button:hover {
+  background-image: url('/public/imgs/restbtn2.png');
+  font-weight: bolder;
 }
 
 /* popup_resting.html */

@@ -33,46 +33,29 @@
                 <div class="subjectBox">    
                     <div class="subjectTitle">
                         <span class="text">{{subj.name}}</span>
-                        <span class="toggle" onclick="clickToggleEvent(this)" >🔼</span>
+                        <span class="toggle" onclick="clickToggleEvent(this);
+                            loadToDoEvent(this) " >🔽</span>
                         <button class="startButton">▶</button>
-                        <button class="deleteButton" >X</button>
+                        <button class="deleteButton"> </button>
                     </div>
-                    <div class="details open">
-                        <ul class="toDoList">
-                            <li><input type="checkbox">
-                                <input type="text" class="toDoContent"
-                                    placeholder="공부할 내용">
-                                <button class="deleteButton" onclick="deleteToDoEvent(this)">X</button>
-                            </li>
-                        </ul>
-                        <button class="toDoAddButton" onclick="addToDoEvent(this)">+</button>
+                    <div class="details">
+                        <form action="" class="formToDo" onsubmit="javascript:submitToDoForm(event)">
+                            <input type="text" class="toDoContent" placeholder="Add Todo">
+                        </form>
+                        <button class="toDoClearBtn" onclick="clearToDoEvent(this)">모두지우기</button>
+                        <ul class="toDoList"></ul>
                     </div> 
                 </div>
             {% endfor %}
-                <div class="subjectBox hide"> 
+                <div class="subjectBox"> 
                     <div class="subjectTitle">
                         <form action="/typeSelection/aloneStudy/addSubject" method="post" class="addSubject">
                             <input class="text" name="name" placeholder="과목명"></input>
                             <button type="submit" class="dbAddButton" >추가</button>
                         </form>
-                        <span class="toggle" onclick="clickToggleEvent(this)" >🔼</span>
-                        <!-- <button class="startButton">▶</button> -->
-                        <button class="deleteButton">X</button>
                     </div>
-                    <div class="details open">
-                        <ul class="toDoList">
-                            <li><input type="checkbox">
-                                <input type="text" class="toDoContent"
-                                    placeholder="공부할 내용">
-                                <button class="deleteButton" onclick="deleteToDoEvent(this)"v>X</button>
-                            </li>
-                        </ul>
-                        <button class="toDoAddButton" onclick="addToDoEvent(this)">+</button>
-                    </div> 
                 </div>
             </div>
-            
-            <!-- <button class="subjectAddButton">+</button> -->
         </div>
         <div class="statisticsBox">
             <div class="statisticsTitle">Statistics</div>
@@ -93,11 +76,11 @@
     </div>
 </body>
 
-<script src="/public/studying.js"></script>
-<script src="/public/toDo.js"></script>
+<script src="/studying.js"></script>
+<script src="/toDo.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-<script src="/public/statistics.js"></script>
+<script src="/statistics.js"></script>
 </html>
