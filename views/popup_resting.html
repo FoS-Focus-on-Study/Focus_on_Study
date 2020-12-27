@@ -10,12 +10,50 @@
   <body class="popup">
     <div class="popupRestingFrame">
     <span class="title">< 휴식중 ></span>
-      <p>
-      <span class="min">{{minute}}</span>분
-      <span class="sec">{{second}}</span>초 남았습니다.
-    </p>
-      <button onclick="location.href='/typeSelection/aloneStudy/re_studying/?dayID={{dayID}}';
-        window.resizeTo(370,570)"">끝내기</button>
+    <p>
+      <span class="timeRemaining"></span>남았습니다.
+    </p>  
+    <button onclick="location.href='/typeSelection/aloneStudy/re_studying/?dayID={{dayID}}';
+      window.resizeTo(370,570)"; clearInterval(restInterval);">끝내기</button>
     </div>
+
+    <input type="hidden" id="Ominute" value="{{minute}}" />
+    <input type="hidden" id="Osecond" value="{{second}}" />
+
   </body>
+
+  <script>
+    const timeRemamining = document.querySelector('.timeRemaining');
+
+    const minute = document.getElementById('Ominute').value,
+      second = document.getElementById('Osecond').value;
+
+    let totalSecond = parseInt(minute)*60 + parseInt(second);
+
+    function sec_To_HHMMSS(sec) {
+      // const hour = Math.floor(sec / 3600);
+      const min = Math.floor((sec % 3600) / 60);
+      const rest = (sec % 3600) % 60;
+      const result =
+        `${min >= 10 ? min : `0${min}`} 분 ` +
+        `${rest >= 10 ? rest : `0${rest}`} 초`;
+
+      return result;
+      // console.log(hour, min, rest);
+    }
+
+    function timer_rest() {
+      totalSecond--;
+      // console.log(subjectSec);
+
+      timeRemamining.innerHTML = sec_To_HHMMSS(totalSecond);
+    }
+
+    function init() {
+      timeRemamining.innerHTML = sec_To_HHMMSS(totalSecond);
+      const restInterval = setInterval(timer_rest, 1000);
+    }
+
+    init();
+  </script>
 </html>
