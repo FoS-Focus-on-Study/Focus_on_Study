@@ -16,7 +16,6 @@ router.get('/signUp', isNotLoggedIn, (req, res) => {
 
 router.get('/', async (req, res, next) => {
   try {
-    console.log(req.body);
     if (req.user) {
       res.redirect('/typeSelection');
     } else

@@ -1,0 +1,521 @@
+* {
+    padding: 10px;
+}
+button {
+    background-color:#badc58 ;
+    border: none;
+    cursor: pointer;
+}
+
+.pageFrame {
+    width: 900px;
+    height: 700px;
+    padding: 0;
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+
+/* main.html */
+
+.logInBox {
+    width: 450px;
+    height: 700px;
+    margin: 0;
+    padding: 0;
+    border-right: 1px dotted black ;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logInBox .loginText {
+    font-size: 30px;
+}
+
+.logInBox .logInForm {
+    display: flex;
+    flex-flow: column;
+}
+
+
+/* main.html > site InformationBox */
+
+.siteInformationBox {
+    width: 450px;
+    height: 700px;
+}
+
+.siteInformationBox .title {
+    font-size: 40px;
+    /* border-bottom: 1px double black; */
+    text-align: center;
+}
+
+.siteInformationBox .slideBox {
+    position: relative;
+    height: 300px;
+    /* border: 1px solid black; */
+    /* background-image: url('./images/slideImage1.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+.siteInformationBox .slideBox .slideImages {
+    padding: 0;
+}
+.siteInformationBox .slideBox .slideImages img{
+    position: absolute;
+    display: none;
+    width: 419.5px;
+    height: 300px;
+    padding: 0;
+}
+
+.siteInformationBox .slideBox .slideImages img.showing {
+    display: block;
+}
+
+.siteInformationBox .slideBox button {
+    font-size: 30px;
+    color: white;
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    top: 35%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 9;
+}
+
+/* .siteInformationBox .slideBox button.prev {
+    ;
+} */
+
+.siteInformationBox .slideBox button.next {
+    right: 10px;
+}
+
+.siteInformationBox .information p {
+    font-size: 20px;
+    
+}
+/* signUp.html */
+
+.signUpFrame {
+    width: 300px;
+    height: 500px;
+    border: solid black 1px;
+    text-align: center;
+    margin: auto;
+}
+
+.signUpFrame h1 {
+    margin: 10px;
+    padding: 0;
+}
+.signUpFrame .signUpForm {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.signUpFrame .signUpForm input {
+    padding: 0;
+    width: 130px;
+    height: 25px;
+    margin-left: 30px;
+}
+
+.signUpFrame .signUpForm button {
+    align-self: center;
+    margin-top: 10px;
+}
+
+/* tyleSelection.html */
+
+.aloneBox, 
+.groupBox {
+    width: 450px;
+}
+
+.aloneBox {
+    /* border-right: 1px dotted black; */
+    background-color: #55efc4;
+    border-radius: 20px;
+}
+
+.groupBox {
+    background-color:#ff7675;
+    border-radius: 20px;
+}
+
+.aloneBox .text ,
+.groupBox .text {
+    font-size: 70px;
+    font-family: cursive;
+}
+
+.aloneBox button,
+.groupBox button {
+    position: relative;
+    top: 40%;
+    left: 35%;
+}
+
+.groupBox button a {
+    text-decoration: none;
+}
+
+/* aloneStudy.html */
+
+.aloneToDoBox,
+.statisticsBox {
+    width: 450px;
+    padding: 0;
+    margin: 0;
+}
+
+.aloneToDoBox {
+    border-right: black dotted 1px;
+}
+
+.aloneToDoBox .subjectBox {
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.aloneToDoBox .subjectBox.hide {
+    display: none;
+}
+
+.aloneToDoBox .toDoTitle,
+.statisticsBox .statisticsTitle {
+    height: 70px;
+    background-color: beige;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 40px;
+    font-family: cursive;
+    line-height: 70px;
+    border-radius: 20px 0  0 0;
+}
+
+.statisticsBox .statisticsTitle {
+    border-radius: 0 20px 0 0;
+
+}
+
+.aloneToDoBox .subjectTitle input {
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+.aloneToDoBox .subjectTitle button {
+    padding: 3px;
+    background-color: transparent;
+    /* border: solid beige 1px; */
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.aloneToDoBox .subjectTitle .toggle {
+    cursor: pointer;
+}
+
+.aloneToDoBox .subjectTitle .deleteButton {
+    float: right;
+}
+
+.aloneToDoBox .subjectBox .details {
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+.aloneToDoBox .subjectBox .details.open {
+    display: block;
+}
+
+.aloneToDoBox .subjectBox .details ul {
+    list-style: none;
+    margin: 5px;
+    padding: 0;
+}
+
+.aloneToDoBox .subjectBox .details ul .toDoContent {
+    border: none;
+    border-bottom: 1px black solid;
+    padding: 5px;
+}
+
+.aloneToDoBox .subjectBox .details ul li {
+    padding: 5px;
+}
+
+.aloneToDoBox .subjectBox .details button {
+    padding: 3px;
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.aloneToDoBox .subjectBox .details .toDoAddButton {
+    font-size: 20px;
+    margin-left: 50px;
+}
+.aloneToDoBox .subjectAddButton {
+    font-size: 30px;
+    line-height: 30px;
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* popup_studying.html */
+
+.studyingPopupFrame {
+    width: 300px;
+    height: 450px;
+    border: solid black 1px;
+    padding: 0;
+}
+
+.studyingPopupFrame .timeBox {
+    border-bottom: 1px solid black;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    height: 170px;
+}
+
+.studyingPopupFrame .timeBox .subjectName {
+    font-size: 30px;
+    text-align: center;
+}
+.studyingPopupFrame .timeBox .subjectTime {
+    font-size: 30px;
+    text-align: center;
+}
+.studyingPopupFrame .timeBox .todayStudyTime {
+    position: absolute;
+    left: 10px;
+}
+
+.studyingPopupFrame .timeBox .todayRestTime {
+    position: absolute;
+    right: 10px;
+}
+.studyingPopupFrame .restOrExit {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+}
+.studyingPopupFrame .restOrExit button {
+    padding: 5px;
+    background-color: bisque;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.studyingPopupFrame .toDoList ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* setRestTime.html */
+
+.setRestTimeFrame {
+    width: 200px;
+    height: 100px;
+    border: solid 1px black;
+    margin: auto;
+}
+
+.setRestTimeFrame form {
+    text-align: center;
+}
+
+.setRestTimeFrame input {
+    padding: 0;
+    width: 50px;
+    height: 25px;
+    vertical-align: middle;
+    margin: 0 0 0 10px;
+    text-align: right;
+}
+.setRestTimeFrame button {
+    display: block;
+    margin: 20px auto 5px auto;
+    width: 60px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+}
+
+/* popup_resting.html */
+
+.popupRestingFrame {
+    padding: 0;
+    margin: auto;
+    height: 140px;
+    width: 260px;
+    border: solid 1px black;
+}
+.popupRestingFrame span.title {
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.popupRestingFrame p {
+    padding: 0;
+    text-align: center;
+}
+
+.popupRestingFrame button {
+    display: block;
+    margin: 20px auto 10px auto;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+}
+
+/* groupStudy.html */
+
+
+.groupToDoBox,
+.liveListBox {
+    width: 450px;
+    padding: 0;
+    margin: 0;
+}
+
+.groupToDoBox {
+    border-right: black dotted 1px;
+}
+
+.groupToDoBox .toDoTitle,
+.liveListBox .title {
+    height: 70px;
+    background-color: beige;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-size: 40px;
+    font-family: cursive;
+    line-height: 70px;
+
+}
+
+.groupToDoBox .toDoTitle {
+    border-radius: 20px 0 0 0;
+}
+
+.liveListBox .title {
+    border-radius: 0 20px 0 0;
+}
+
+.groupToDoBox .subjectTitle button {
+    padding: 3px;
+    background-color: bisque;
+    border: solid beige 1px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.groupToDoBox .subjectTitle .deleteButton {
+    float: right;
+}
+
+.groupToDoBox .subjectBox {
+    border: 1px solid black;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.groupToDoBox .subjectBox .details {
+    padding: 0;
+    margin: 0;
+}
+
+.groupToDoBox .subjectBox .details ul {
+    list-style: none;
+    margin: 5px;
+    padding: 0;
+}
+.groupToDoBox .subjectBox .details button {
+    padding: 3px;
+    background-color: bisque;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.groupToDoBox .subjectAddButton {
+    font-size: 30px;
+    line-height: 30px;
+    background-color: goldenrod;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.liveListBox {
+    text-align: center;
+}
+.liveListBox span.studyingCount {
+    color: red;
+}
+
+.liveListBox .MemberPart {
+    width: 170px;
+    height: 130px;
+    border: 1px solid black;
+    margin: 10px 10px;
+    text-align: center;
+    display: inline-block;
+    
+}
+
+.liveListBox .streamingScreen {
+    width: 160px;
+    height: 90px;
+    border: 1px solid blue;
+    padding: 0;
+    margin: auto;
+}
+
+.liveListBox .memberName, 
+.liveListBox .studyingTime {
+    display: inline-block;
+    margin: auto;
+}
+
+/* liveStreaming.html */
+
+.liveStreamingScreen {
+    border: 1px solid black;
+    width: 600px;
+    height: 400px;
+}

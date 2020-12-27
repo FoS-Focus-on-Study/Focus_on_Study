@@ -11,17 +11,17 @@
     <nav id="navbar">
         <div class="navbarLogo">
             <div class="goBack">
-            <a href="./typeSelection.html">
+            <a href="/typeSelection">
                 <!-- ⇦ -->
                 <img src="/imgs/goback.png" class = "goBack btn" alt="뒤로가기버튼">
             </a>
             </div>
-            <a href="#" class="navbarLogo">Focus on Study</a>
+            <a href="/" class="navbarLogo">Focus on Study</a>
         </div>
         <div class="navbarMenu div">
             <ul class="navbarMenu">
             <li class="navbarMenuItem">Profile</li>
-            <li class="navbarMenuItem">Logout</li>
+            <li class="navbarMenuItem" onclick="">Logout</li>
             </ul>
         </div>
     </nav>
@@ -32,11 +32,12 @@
             {% for subj in subjects %}    
                 <div class="subjectBox">    
                     <div class="subjectTitle">
-                        <span class="text">{{subj.name}}</span>
+                        <span id ={{"subjectName"+loop.index}} class="text">{{subj.name}}</span>
+                        <span id ="subjectHostName" class="text">{{subj.hostName}}</span>
                         <span class="toggle" onclick="clickToggleEvent(this);
                             loadToDoEvent(this) " >🔽</span>
-                        <button class="startButton">▶</button>
-                        <button class="deleteButton">X</button>
+                        <button class="startButton" onclick="startStudy('{{subj.name}}')">▶</button>
+                        <button class="deleteButton" onclick="deleteSubjectEvent('{{subj.name}}','{{subj.hostName}}')">X</button>
                     </div>
                     <div class="details">
                         <form action="" class="formToDo" onsubmit="javascript:submitToDoForm(event)">
@@ -75,7 +76,6 @@
         </div>  
     </div>
 </body>
-
 <script src="/studying.js"></script>
 <script src="/toDo.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>

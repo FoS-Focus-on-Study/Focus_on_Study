@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>popup_studying</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="popup">
     <div class="studyingPopupFrame">
       <div class="timeBox">
-        <div class="subjectName">Node.js 교과서</div>
+        <div class="subjectName">{{exDay.subjectName}}</div>
         <div class="subjectTime">00:00:00</div>
         <div class="todayStudyTime">study : 00:00:00</div>
         <div class="todayRestTime">rest : 00:00:00</div>
       </div>
       <div class="restOrExit">
         <button class="rest">휴식</button>
-        <button class="exit">끝내기</button>
+        <button class="exit" onclick="endStudy()">끝내기</button>
       </div>
       <div class="toDoList">
         <ul>
@@ -25,12 +25,17 @@
         </ul>
       </div>
     </div>
+    <input type="hidden" id="Oid" value="{{exDay.id}}" />
+    <input type="hidden" id="Oseconds" value="{{exDay.seconds}}" />
+    <input type="hidden" id="OsubjectName" value="{{exDay.subjectName}}" />
+    <input type="hidden" id="Odate" value="{{exDay.date}}" />
+    <input type="hidden" id="OhostName" value="{{exDay.hostName}}" />
   </body>
   <script>
     const subjectTime = document.querySelector('.timeBox .subjectTime');
     const todayStudyTime = document.querySelector('.timeBox .todayStudyTime');
-    let subjectSec = 0,
-      todayStudySec = 0;
+    let subjectSec = document.getElementById('Oseconds').value,
+      todayStudySec = document.getElementById('Oseconds').value;
 
     function sec_To_HHMMSS(sec) {
       const hour = Math.floor(sec / 3600);
@@ -53,17 +58,64 @@
       subjectTime.innerHTML = sec_To_HHMMSS(subjectSec);
       todayStudyTime.innerHTML = `study : ${sec_To_HHMMSS(todayStudySec)}`;
     }
+    function endStudy() {
+      var form = document.createElement('form');
+      form.setAttribute('action', '/typeSelection/aloneStudy/end_study');
+      form.setAttribute('method', 'post');
+      var oseconds = document.createElement('input');
+      oseconds.setAttribute('class', 'number');
+      oseconds.setAttribute('type', 'hidden');
+      oseconds.setAttribute('name', 'Oseconds');
+      oseconds.setAttribute('value', todayStudySec);
+      var osubjectName = document.createElement('input');
+      osubjectName.setAttribute('class', 'text');
+      osubjectName.setAttribute('type', 'hidden');
+      osubjectName.setAttribute('name', 'OsubjectName');
+      osubjectName.setAttribute(
+        'value',
+        document.getElementById('OsubjectName').value,
+      );
+      var odate = document.createElement('input');
+      odate.setAttribute('class', 'text');
+      odate.setAttribute('type', 'hidden');
+      odate.setAttribute('name', 'Odate');
+      odate.setAttribute('value', document.getElementById('Odate').value);
+      var ohostName = document.createElement('input');
+      ohostName.setAttribute('class', 'text');
+      ohostName.setAttribute('type', 'hidden');
+      ohostName.setAttribute('name', 'OhostName');
+      ohostName.setAttribute(
+        'value',
+        document.getElementById('OhostName').value,
+      );
+      form.appendChild(oseconds);
+      form.appendChild(osubjectName);
+      form.appendChild(odate);
+      form.appendChild(ohostName);
+      document.charset = 'utf-8';
+      document.body.appendChild(form);
+      form.submit();
+    }
 
     function init() {
       const studyInterval = setInterval(stopwatch, 1000);
-
+      //const logInterval = setInterval(console.log(win), 1000);
       const startRestBtn = document.querySelector(
         '.studyingPopupFrame .restOrExit .rest',
       );
 
       startRestBtn.onclick = () => {
+        var oid = document.getElementById('Oid').value;
+        clearInterval(studyInterval);
         const option = 'top=150px left=150px width=350px height=200px';
-        window.open('./setRestTime.html', 'setRestTime', option);
+        var win = window.open(
+          './setRestTime?dayID=' + oid,
+          'setRestTime',
+          option,
+        );
+        setTimeout(() => {
+          endStudy();
+        }, 2000);
       };
     }
 
