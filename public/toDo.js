@@ -104,10 +104,26 @@ function clearToDoEvent(clearBtn) {
 }
 
 // 과목 삭제이벤트 (지훈씨가 구현?)
-// function deleteSubjectEvent(e) {
-//   const clickedSubject = e.currentTarget.parentNode.parentNode;
-//   subjectList.removeChild(clickedSubject);
-// }
+function deleteSubjectEvent(name, hostName) {
+  var form = document.createElement('form');
+  form.setAttribute('action', '/typeSelection/aloneStudy/deleteSubject');
+  form.setAttribute('method', 'post');
+  var iname = document.createElement('input');
+  iname.setAttribute('class', 'text');
+  iname.setAttribute('type', 'hidden');
+  iname.setAttribute('name', 'name');
+  iname.setAttribute('value', name);
+  var ihostName = document.createElement('input');
+  ihostName.setAttribute('class', 'text');
+  ihostName.setAttribute('type', 'hidden');
+  ihostName.setAttribute('name', 'hostName');
+  ihostName.setAttribute('value', hostName);
+  form.appendChild(iname);
+  form.appendChild(ihostName);
+  document.charset = 'utf-8';
+  document.body.appendChild(form);
+  form.submit();
+}
 
 // 페이지 로드시 로컬스토리지의 데이터를 화면에 생성.
 function paintToDo_LS(ul, todo) {
@@ -151,9 +167,24 @@ function setLS_NewId() {
   }
 }
 
-function init() {
-  setLS_NewId();
-  // subjectDeleteBtn.onclick = deleteSubjectEvent;
+//init();
+
+function startStudy(name) {
+  window.open(
+    '/typeSelection/aloneStudy/popup_studying?name=' + name,
+    'studying~',
+    'toolbar=no, width=540, height=467, directories=no, status=no,    scrollorbars=no, resizable=no',
+  );
 }
 
-init();
+// function onSubmit(){
+//   var myForm = document.popForm;
+//   var url = "/typeSelection/aloneStudy/popup_studying";
+//   window.open("" ,"studying~",
+//         "toolbar=no, width=540, height=467, directories=no, status=no,    scrollorbars=no, resizable=no");
+//   myForm.action =url;
+//   myForm.method="post";
+//   myForm.target="popForm";
+//   myForm.nameValue = name;
+//  myForm.submit();
+//  }
