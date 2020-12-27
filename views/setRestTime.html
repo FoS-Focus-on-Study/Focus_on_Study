@@ -1,19 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Set Rest Time</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="imgs/book.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
   </head>
   <body class="popup">
     <div class="setRestTimeFrame">
-      <form action="./popup_resting.html">
-        <input type="text" />
-        <span>min</span>
-        <input type="text" />
-        <span>sec</span>
+      <form method="POST" action="./popup_resting?dayID={{dayID}}">
+        <input type="text" name="min" /> 분 <input type="text" name="sec" /> 초
         <button class="submit">설정</button>
       </form>
     </div>

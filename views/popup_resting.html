@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resting</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" href="imgs/book.png" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
   </head>
   <body class="popup">
     <div class="popupRestingFrame">
-      <form action="">
-        <span class="title">< 휴식중 ></span>
-        <p>
-          <span class="min">14</span>분 <span class="sec">25</span>초
-          남았습니다.
-        </p>
-        <button class="submit">끝내기</button>
-      </form>
+    <img src="/imgs/resting.png" alt="휴식중title" class="title">
+      <p>
+      <span class="min">{{minute}}</span>분
+      <span class="sec">{{second}}</span>초 남았습니다.
+    </p>
+      <button onclick="location.href='/typeSelection/aloneStudy/re_studying/?dayID={{dayID}}'"">끝내기</button>
     </div>
   </body>
 </html>

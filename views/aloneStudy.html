@@ -4,31 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alone Study</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="imgs/book.png" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
 </head>
 <body>
     <!-- Navbar -->
     <nav id="navbar">
         <div class="navbarLogo">
             <div class="goBack">
-            <a href="typeSelection.html">
+            <a href="/typeSelection">
                 <!-- ⇦ -->
-                <img src="imgs/goback.png" class = "goBack btn" alt="뒤로가기버튼">
+                <img src="/imgs/goback.png" class = "goBack btn" alt="뒤로가기버튼">
             </a>
             </div>
-            <a href="#" class="navbarLogo">Focus on Study</a>
+            <a href="/" class="navbarLogo">Focus on Study</a>
         </div>
         <div class="navbarMenu div">
             <ul class="navbarMenu">
-            <li class="navbarMenuItem">Logout</li>
+            <a href="auth_fos/logout" class="navbarMenuItem">Logout</a>
             </ul>
         </div>
     </nav>
     <div class="pageFrame Study">
         <div class="aloneToDoBox">
             <div class="toDoTitle">
-                <img src="imgs/todo.png" alt="">
+                <img src="/imgs/todo.png" alt="">
             </div>
             <div class="subjectList">
             {% for subj in subjects %}    
@@ -37,8 +37,8 @@
                         <span class="text">{{subj.name}}</span>
                         <span class="toggle" onclick="clickToggleEvent(this);
                             loadToDoEvent(this) " >🔽</span>
-                        <button class="startButton">▶</button>
-                        <button class="deleteButton"> </button>
+                        <button class="startButton" onclick="startStudy('{{subj.name}}')"></button>
+                        <button class="deleteButton" onclick="deleteSubjectEvent('{{subj.name}}','{{subj.hostName}}')"></button>
                     </div>
                     <div class="details">
                         <form action="" class="formToDo" onsubmit="javascript:submitToDoForm(event)">
@@ -61,7 +61,7 @@
         </div>
         <div class="statisticsBox">
             <div class="statisticsTitle">
-                <img src="imgs/statistics.png" alt="">        
+                <img src="/imgs/statistics.png" alt="">        
             </div>
             <form action="" class="sendDate">
               <input type="date" class="inputDate" >

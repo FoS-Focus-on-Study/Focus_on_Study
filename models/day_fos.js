@@ -7,16 +7,16 @@ module.exports = class Day extends (
   static init(sequelize) {
     return super.init(
       {
-        subject: {
+        subjectName: {
           type: Sequelize.STRING(15),
           allowNull: false,
         },
         date: {
-          type: Sequelize.DATE,
+          type: Sequelize.DATEONLY,
           allowNull: false,
           defaulValue: Sequelize.NOW,
         },
-        minutes: {
+        seconds: {
           type: Sequelize.INTEGER,
           allowNull: false,
           defaulValue: 0,
@@ -38,9 +38,5 @@ module.exports = class Day extends (
         collate: 'utf8mb4_general_ci',
       },
     );
-  }
-
-  static associate(db) {
-    db.Day.belongsTo(db.Subject);
   }
 };

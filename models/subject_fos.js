@@ -37,7 +37,6 @@ module.exports = class Subject extends (
   }
 
   static associate(db) {
-    db.Subject.hasMany(db.Day);
     db.Subject.belongsTo(db.User);
     db.Subject.belongsTo(db.Team);
   }
