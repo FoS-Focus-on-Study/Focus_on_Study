@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
+</head>
+<body>  
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbarLogo">
+          <a href="#" class="navbarLogo">Focus on Study</a>
+        </div>
+        <div class="navbarMenu div">
+        </div>
+    </nav>
+    <div class="pageFrame Study">
+        <div class="logInBox">
+            <div class="logInOrSignUp">
+                <span>Login</span> 
+                <button type="button" id="signUp" onclick="location.href='/signUp'" class="signUpButton">회원가입</button>
+            </div>
+            <form id="login-form" action="/auth_fos/login" class="logInForm" method="post">
+                <label for="localId">&nbsp;ID:
+                    <input type="text" id="localId" name="localId" required autofocus></label>
+                <label for="password">PW: 
+                    <input type="password" id="password" name="password" required></label>
+                <button id="login" type="submit" class="logInButton"></button>
+            </form>
+        </div>
+        <div class="siteInformationBox">
+            <div class="title">Focus on Study (FoS) </div>
+            <div class="slideBox">
+                <button class="prev">⇦</button>
+                <button class="next">⇨</button>
+                <div class="slideImages">
+                    <img class="showing" src="images/slideImage1.jpg" >
+                    <img src="images/slideImage2.jpg" >
+                    <img src="images/slideImage3.jpg" >
+                </div>
+            </div>
+            <div class="information">
+                <p class="showing">슬라이드1 설명</p>
+                <p>슬라이드2 설명</p>
+                <p>슬라이드3 설명</p>
+            </div>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      window.onload = () => {
+        if (new URL(location.href).searchParams.get('loginError')) {
+          alert(new URL(location.href).searchParams.get('loginError'));
+        }
+      };
+    </script>
+    <!-- <script src="./logIn.js"></script> -->
+    <script src="InformationSlide.js"></script>
+</body>
+</html>

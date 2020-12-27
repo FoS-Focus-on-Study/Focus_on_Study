@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alone Study</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="navbarLogo">
+            <div class="goBack">
+            <a href="/typeSelection">
+                <!-- ⇦ -->
+                <img src="/imgs/goback.png" class = "goBack btn" alt="뒤로가기버튼">
+            </a>
+            </div>
+            <a href="/" class="navbarLogo">Focus on Study</a>
+        </div>
+        <div class="navbarMenu div">
+            <ul class="navbarMenu">
+            <a href="auth_fos/logout" class="navbarMenuItem">Logout</a>
+            </ul>
+        </div>
+    </nav>
+    <div class="pageFrame Study">
+        <div class="aloneToDoBox">
+            <div class="toDoTitle">
+                <img src="/imgs/todo.png" alt="">
+            </div>
+            <div class="subjectList">
+            {% for subj in subjects %}    
+                <div class="subjectBox">    
+                    <div class="subjectTitle">
+                        <span class="text">{{subj.name}}</span>
+                        <span class="toggle" onclick="clickToggleEvent(this);
+                            loadToDoEvent(this) " >🔽</span>
+                        <button class="startButton" onclick="startStudy('{{subj.name}}')">▶</button>
+                        <button class="deleteButton" onclick="deleteSubjectEvent('{{subj.name}}','{{subj.hostName}}')"></button>
+                    </div>
+                    <div class="details">
+                        <form action="" class="formToDo" onsubmit="javascript:submitToDoForm(event)">
+                            <input type="text" class="toDoContent" placeholder="Add Todo">
+                        </form>
+                        <button class="toDoClearBtn" onclick="clearToDoEvent(this)">모두지우기</button>
+                        <ul class="toDoList"></ul>
+                    </div> 
+                </div>
+            {% endfor %}
+                <div class="subjectBox"> 
+                    <div class="subjectTitle">
+                        <form action="/typeSelection/aloneStudy/addSubject" method="post" class="addSubject">
+                            <input class="text" name="name" placeholder="과목명"></input>
+                            <button type="submit" class="dbAddButton" >추가</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="statisticsBox">
+            <div class="statisticsTitle">
+                <img src="/imgs/statistics.png" alt="">        
+            </div>
+            <form action="" class="sendDate">
+              <input type="date" class="inputDate" >
+              <input type="submit" class="submitBtn" value="보기">
+            </form>
+            <div class="typeSelect">
+                <button class="daily">일별</button>
+                <button class="weekly">주별</button>
+                <button class="monthly">월별</button>
+            </div>
+            <div class="main">
+                <canvas id="myChart"></canvas>
+                <p class="text"></p>
+            </div>
+        </div>  
+    </div>
+</body>
+
+<script src="/studying.js"></script>
+<script src="/toDo.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="/statistics.js"></script>
+</html>

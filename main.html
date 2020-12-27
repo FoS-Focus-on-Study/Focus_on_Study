@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Main Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" >
 </head>
 <body>
+    <!-- Navbar -->
+    <nav id="navbar">
+      <div class="navbarLogo">
+        <!-- <div class="goBack">
+          <a href="./main.html">⇦</a>
+        </div> -->
+        <a href="#" class="navbarLogo">Focus on Study</a>
+      </div>
+      <div class="navbarMenu div">
+        <!-- <ul class="navbarMenu">
+          <li class="navbarMenuItem">My page</li>
+          <li class="navbarMenuItem">Logout</li>
+        </ul> -->
+      </div>
+    </nav>
     <div class="pageFrame">
         <div class="logInBox">
             <div class="logInOrSignUp">
                 <span class="loginText">Login</span>
-                <button class="signUpButton">회원가입</button>
+                <button class="signUpButton"
+                    onclick="location.href='signUp.html'">회원가입</button>
             </div>
             <form action="/typeSelection.html" class="logInForm">
                 <label for="inputID">ID : 
@@ -21,16 +37,24 @@
                 <button class="logInButton">로그인</button>
             </form>
         </div>
-        <div class="siteInformation">
+        <div class="siteInformationBox">
             <div class="title">Focus on Study (FoS) </div>
             <div class="slideBox">
                 <button class="prev">⇦</button>
                 <button class="next">⇨</button>
+                <div class="slideImages">
+                    <img class="showing" src="./images/slideImage1.jpg" >
+                    <img src="./images/slideImage2.jpg" >
+                    <img src="./images/slideImage3.jpg" >
+                </div>
             </div>
             <div class="information">
                 <p>개인 공부하기와 그룹에서 공부하기 중 선택하실 수 있습니다.</p>
             </div>
         </div>
+      </div>
     </div>
+    <script src="./logIn.js"></script>
+    <script src="./InformationSlide.js"></script>
 </body>
 </html>
