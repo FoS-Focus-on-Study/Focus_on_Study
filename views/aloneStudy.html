@@ -21,7 +21,7 @@
         </div>
         <div class="navbarMenu div">
             <ul class="navbarMenu">
-            <li class="navbarMenuItem">Logout</li>
+            <a href="auth_fos/logout" class="navbarMenuItem">Logout</a>
             </ul>
         </div>
     </nav>
@@ -37,7 +37,7 @@
                         <span class="text">{{subj.name}}</span>
                         <span class="toggle" onclick="clickToggleEvent(this);
                             loadToDoEvent(this) " >🔽</span>
-                        <button class="startButton">▶</button>
+                        <button class="startButton" onclick="startStudy('{{subj.name}}')">▶</button>
                         <button class="deleteButton"> </button>
                     </div>
                     <div class="details">
