@@ -38,7 +38,7 @@
                         <span class="toggle" onclick="clickToggleEvent(this);
                             loadToDoEvent(this) " >🔽</span>
                         <button class="startButton" onclick="startStudy('{{subj.name}}')">▶</button>
-                        <button class="deleteButton"> </button>
+                        <button class="deleteButton" onclick="deleteSubjectEvent('{{subj.name}}','{{subj.hostName}}')"></button>
                     </div>
                     <div class="details">
                         <form action="" class="formToDo" onsubmit="javascript:submitToDoForm(event)">
