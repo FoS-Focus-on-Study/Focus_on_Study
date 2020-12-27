@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
 </head>
 <body>  
     <!-- Navbar -->
@@ -17,15 +18,15 @@
     <div class="pageFrame Study">
         <div class="logInBox">
             <div class="logInOrSignUp">
-                <span class="loginText">Login</span>
+                <span>Login</span> 
                 <button type="button" id="signUp" onclick="location.href='/signUp'" class="signUpButton">회원가입</button>
             </div>
             <form id="login-form" action="/auth_fos/login" class="logInForm" method="post">
-                <label for="localId">ID : 
+                <label for="localId">&nbsp;ID:
                     <input type="text" id="localId" name="localId" required autofocus></label>
-                <label for="password">PW : 
+                <label for="password">PW: 
                     <input type="password" id="password" name="password" required></label>
-                <button id="login" type="submit" class="logInButton">로그인</button>
+                <button id="login" type="submit" class="logInButton"></button>
             </form>
         </div>
         <div class="siteInformationBox">

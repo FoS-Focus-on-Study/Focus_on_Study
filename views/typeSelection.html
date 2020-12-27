@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Type Selection</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
   </head>
   <body>
     <!-- Navbar -->
@@ -13,10 +14,9 @@
         <a href="/" class="navbarLogo">Focus on Study</a>
       </div>
       <div class="navbarMenu div">
-          <!-- <ul class="navbarMenu"> -->
-          <!-- <li class="navbarMenuItem">Profile</li> -->
-          <a href="/auth_fos/logout" class="navbarMenuItem">Logout</a>
-          <!-- </ul> -->
+        <ul class="navbarMenu">
+          <li class="navbarMenuItem">Logout</li>
+        </ul>
       </div>
     </nav>
     <div class="pageFrame typeSelect">
@@ -26,8 +26,9 @@
       <button
           type="button"
           class="aloneButton"
-          onclick="location.href='/typeSelection/aloneStudy'"
+          onclick="location.href='aloneStudy'"
         >
+          <!-- onclick="location.href='/typeSelection/aloneStudy'" -->
           Alone
       </button>
     </div> 

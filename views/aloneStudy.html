@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alone Study</title>
     <link rel="stylesheet" href="/style.css">
+    <link rel="icon" type="image/png" href="/imgs/book.png" />
 </head>
 <body>
     <!-- Navbar -->
@@ -20,24 +21,24 @@
         </div>
         <div class="navbarMenu div">
             <ul class="navbarMenu">
-            <li class="navbarMenuItem">Profile</li>
-            <li class="navbarMenuItem" onclick="">Logout</li>
+            <li class="navbarMenuItem">Logout</li>
             </ul>
         </div>
     </nav>
     <div class="pageFrame Study">
         <div class="aloneToDoBox">
-            <div class="toDoTitle">To Do List</div>
+            <div class="toDoTitle">
+                <img src="/imgs/todo.png" alt="">
+            </div>
             <div class="subjectList">
             {% for subj in subjects %}    
                 <div class="subjectBox">    
                     <div class="subjectTitle">
-                        <span id ={{"subjectName"+loop.index}} class="text">{{subj.name}}</span>
-                        <span id ="subjectHostName" class="text">{{subj.hostName}}</span>
+                        <span class="text">{{subj.name}}</span>
                         <span class="toggle" onclick="clickToggleEvent(this);
                             loadToDoEvent(this) " >🔽</span>
-                        <button class="startButton" onclick="startStudy('{{subj.name}}')">▶</button>
-                        <button class="deleteButton" onclick="deleteSubjectEvent('{{subj.name}}','{{subj.hostName}}')">X</button>
+                        <button class="startButton">▶</button>
+                        <button class="deleteButton"> </button>
                     </div>
                     <div class="details">
                         <form action="" class="formToDo" onsubmit="javascript:submitToDoForm(event)">
@@ -59,7 +60,9 @@
             </div>
         </div>
         <div class="statisticsBox">
-            <div class="statisticsTitle">Statistics</div>
+            <div class="statisticsTitle">
+                <img src="/imgs/statistics.png" alt="">        
+            </div>
             <form action="" class="sendDate">
               <input type="date" class="inputDate" >
               <input type="submit" class="submitBtn" value="보기">
@@ -76,6 +79,7 @@
         </div>  
     </div>
 </body>
+
 <script src="/studying.js"></script>
 <script src="/toDo.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
