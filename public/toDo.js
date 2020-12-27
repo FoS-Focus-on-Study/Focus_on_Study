@@ -173,7 +173,7 @@ function startStudy(name) {
   window.open(
     '/typeSelection/aloneStudy/popup_studying?name=' + name,
     'studying~',
-    'toolbar=no, width=540, height=467, directories=no, status=no,    scrollorbars=no, resizable=no',
+    'toolbar=no, width=360px, height=510px, directories=no, status=no,    scrollorbars=no, resizable=no',
   );
 }
 
