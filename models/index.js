@@ -28,6 +28,4 @@ Day.init(sequelize);
 User.associate(db);
 Team.associate(db);
 Subject.associate(db);
-Day.associate(db);
-
 module.exports = db;
