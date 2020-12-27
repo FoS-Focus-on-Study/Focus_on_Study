@@ -45,6 +45,12 @@ span {
   cursor: default;
 }
 
+@media screen and (min-width: 768px) {
+  body:not(.popup) {
+    background-position-y: 90%;
+  }
+}
+
 /* Navbar */
 
 #navbar {
@@ -196,6 +202,10 @@ span {
   flex-flow: column;
 }
 
+.logInBox .logInForm input {
+  background-color: whitesmoke;
+}
+
 .logInBox label {
   font-family: fantasy;
   text-decoration: underline solid 3px #1dd1a1;
@@ -244,7 +254,7 @@ span {
 }
 
 .siteInformationBox .slideBox button {
-  font-size: 45px;
+  font-size: 35px;
   font-weight: bolder;
   color: black;
   width: 50px;
