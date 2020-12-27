@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alone Study</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imgs/book.png" />
 </head>
 <body>
     <!-- Navbar -->
     <nav id="navbar">
         <div class="navbarLogo">
             <div class="goBack">
-            <a href="./typeSelection.html">
+            <a href="typeSelection.html">
                 <!-- ⇦ -->
                 <img src="imgs/goback.png" class = "goBack btn" alt="뒤로가기버튼">
             </a>
@@ -20,14 +21,15 @@
         </div>
         <div class="navbarMenu div">
             <ul class="navbarMenu">
-            <li class="navbarMenuItem">Profile</li>
             <li class="navbarMenuItem">Logout</li>
             </ul>
         </div>
     </nav>
     <div class="pageFrame Study">
         <div class="aloneToDoBox">
-            <div class="toDoTitle">To Do List</div>
+            <div class="toDoTitle">
+                <img src="imgs/todo.png" alt="">
+            </div>
             <div class="subjectList">
             {% for subj in subjects %}    
                 <div class="subjectBox">    
@@ -58,7 +60,9 @@
             </div>
         </div>
         <div class="statisticsBox">
-            <div class="statisticsTitle">Statistics</div>
+            <div class="statisticsTitle">
+                <img src="imgs/statistics.png" alt="">        
+            </div>
             <form action="" class="sendDate">
               <input type="date" class="inputDate" >
               <input type="submit" class="submitBtn" value="보기">
