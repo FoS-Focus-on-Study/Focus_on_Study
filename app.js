@@ -14,6 +14,7 @@ const authRouter = require('./routes/auth_fos');
 const typeRouter = require('./routes/typeSelection');
 const { sequelize } = require('./models');
 const passportConfig = require('./passport');
+const { Session } = require('inspector');
 
 const app = express();
 passportConfig();
@@ -31,24 +32,29 @@ sequelize
   .catch((err) => {
     console.error(err);
   });
-
-app.use(morgan('dev'));
+if (process.env.NODE_ENV === 'production') {
+  app.use(morgan('combined'));
+} else {
+  app.use(morgan('dev'));
+}
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/img', express.static(path.join(__dirname, 'uploads')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
-app.use(
-  session({
-    resave: false,
-    saveUninitialized: false,
-    secret: process.env.COOKIE_SECRET,
-    cookie: {
-      httpOnly: true,
-      secure: false,
-    },
-  }),
-);
+const sessionOption = {
+  resave: false,
+  saveUninitialized: false,
+  secret: process.env.COOKIE_SECRET,
+  cookie: {
+    httpOnly: true,
+    secure: false,
+  },
+};
+if (process.env.NODE_ENV === 'production') {
+  sessionOption.proxy = true;
+}
+app.use(session(sessionOption));
 app.use(passport.initialize());
 app.use(passport.session());
 

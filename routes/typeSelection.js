@@ -66,7 +66,7 @@ router.get('/aloneStudy/popup_studying', isLoggedIn, async (req, res, next) => {
   const dayID = req.query.dayID;
   var today = new Date();
   const date =
-    today.getFullYear() + '-' + today.getMonth() + '-' + today.getDate();
+    today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
   try {
     if (subjectName)
       var exDay = await Day.findOne({ where: { subjectName, date, hostName } });
