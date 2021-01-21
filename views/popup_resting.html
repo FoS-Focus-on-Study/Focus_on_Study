@@ -23,15 +23,20 @@
   </body>
 
   <script>
+    //남은시간 표기 요소
     const timeRemamining = document.querySelector('.timeRemaining');
 
-    const minute = document.getElementById('Ominute').value,
+    let minute = document.getElementById('Ominute').value,
       second = document.getElementById('Osecond').value;
 
-    let totalSecond = parseInt(minute)*60 + parseInt(second);
+    minute = (minute == "") ? 0 : parseInt(minute);
+    second = (second == "") ? 0 : parseInt(second);
 
-    function sec_To_HHMMSS(sec) {
-      // const hour = Math.floor(sec / 3600);
+
+    let totalSecond = minute*60 + second;
+
+    //초를 MM:SS형태로 변환
+    function sec_To_MMSS(sec) {
       const min = Math.floor((sec % 3600) / 60);
       const rest = (sec % 3600) % 60;
       const result =
@@ -39,19 +44,17 @@
         `${rest >= 10 ? rest : `0${rest}`} 초`;
 
       return result;
-      // console.log(hour, min, rest);
     }
 
-    function timer_rest() {
+    function timer() {
       totalSecond--;
-      // console.log(subjectSec);
 
-      timeRemamining.innerHTML = sec_To_HHMMSS(totalSecond);
+      timeRemamining.innerHTML = sec_To_MMSS(totalSecond);
     }
 
     function init() {
-      timeRemamining.innerHTML = sec_To_HHMMSS(totalSecond);
-      const restInterval = setInterval(timer_rest, 1000);
+      timeRemamining.innerHTML = sec_To_MMSS(totalSecond);
+      const restInterval = setInterval(timer, 1000);
     }
 
     init();
