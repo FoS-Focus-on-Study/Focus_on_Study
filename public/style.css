@@ -33,11 +33,13 @@ a {
 
 input {
   background-color: transparent;
+  outline: none;
 }
 
 button {
   background-color: transparent;
   border: none;
+  outline: none;
   cursor: pointer;
 }
 
@@ -126,21 +128,26 @@ span {
   width: 900px;
   height: 85vh;
   padding: 0;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   flex-flow: row;
   border-radius: 20px;
 }
 
-.pageFrame.Study {
+.pageFrame.Login {
   width: 900px;
-  height: 85vh;
+  height: 80vh;
   padding: 0;
   margin: 0 auto;
   display: flex;
   flex-flow: row;
-  /* border: 1px solid black; */
-  border-radius: 20px;
+}
+
+.pageFrame.Study {
+  width: 900px;
+  height: 80vh;
+  padding: 0;
+  margin: 0 auto;
 }
 
 /* main.html */
@@ -396,12 +403,7 @@ span {
   color: #1dd1a1;
   text-shadow: 2px 2px 2px gray;
   opacity: 1;
-  /* transform: translateY(0px); */
 }
-
-/* .pointer_img:hover {
-  opacity: 1;
-} */
 
 .aloneButton {
   display: flex;
@@ -415,9 +417,49 @@ span {
 
 /* aloneStudy.html */
 
+.study-menu {
+  display: block;
+  margin: auto;
+  width: 900px;
+  padding: 0;
+}
+
+.study-menu ul {
+  display: flex;
+}
+
+.study-menu ul li {
+  cursor: pointer;
+  flex: 1;
+  height: 50px;
+  background-size: 160px 80px;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  transition: all 200ms ease-in;
+}
+
+.study-menu ul li.on {
+  position: relative;
+  transform: scale(1.1);
+}
+
+.study-menu ul li:hover {
+  transform: scale(1.1);
+}
+
+.study-menu ul li.on:after {
+  content: '✔';
+  position: absolute;
+  right: 40%;
+  top: -10%;
+  font-size: 60px;
+  color: red;
+}
+
 .aloneToDoBox,
 .statisticsBox {
-  width: 450px;
+  width: 100%;
   padding: 0;
   /* margin: auto; */
   /* margin-top: 50px; */
@@ -446,14 +488,6 @@ span {
   text-align: center;
 
   border-radius: 20px 0 0 0;
-}
-
-.aloneToDoBox .toDoTitle img {
-  width: 150px;
-}
-
-.statisticsBox .statisticsTitle img {
-  width: 200px;
 }
 
 .aloneToDoBox .subjectTitle input {
@@ -763,10 +797,8 @@ body.popup div {
 
 /* groupStudy.html */
 
-.groupToDoBox,
-.liveListBox {
-  width: 450px;
-  padding: 0;
+.groupToDoBox {
+  width: 100%;
   margin: 0;
 }
 
@@ -776,7 +808,7 @@ body.popup div {
 
 .groupToDoBox .toDoTitle,
 .liveListBox .title {
-  height: 70px;
+  height: 80px;
   /* background-color: beige; */
   padding: 0;
   margin: 0;
@@ -843,13 +875,18 @@ body.popup div {
 }
 
 .liveListBox {
+  display: flex;
+  width: 500px;
   text-align: center;
+  margin: 0 auto;
 }
+
 .liveListBox span.studyingCount {
   color: red;
 }
 
 .liveListBox .MemberPart {
+  background-color: whitesmoke;
   width: 170px;
   height: 130px;
   border: 1px solid black;
