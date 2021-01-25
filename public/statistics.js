@@ -49,7 +49,7 @@ const sampleData = {
         // totalTime: "1:0:0",
       },
       {
-        subject: '운동',
+        subject: 'node.js스터디',
         // startTime: "16:30:00",
         // endTime: "17:45:30",
         totalTime: 4530,
@@ -64,10 +64,12 @@ const sampleData = {
 };
 
 const inputDate = document.querySelector('.statisticsBox .inputDate');
-const statisticsChart = document.querySelector('.statisticsBox .chart');
 const dateSendButton = document.querySelector(
   '.statisticsBox .sendDate .submitBtn',
 );
+const chartMenu = document.querySelector('.statisticsBox .typeSelect'),
+  tabButtons = document.querySelectorAll('.statisticsBox .typeSelect button');
+
 const canvas_daily = document.querySelector(
   '.statisticsBox #chartCanvas_daily',
 );
@@ -108,7 +110,7 @@ function createChart(dailyData) {
       labels: chartLabel,
       datasets: [
         {
-          label: 'studying time',
+          label: '공부시간',
           // data: [12, 19, 3, 5, 2, 3],
           data: chartData,
           backgroundColor: [
@@ -203,6 +205,21 @@ function sendDateEvent(e) {
 }
 // inputDate.onchange = DateChange;
 
+function chartMenuClickEvent(e) {
+  const target = e.target;
+  if (target.tagName == 'BUTTON') {
+    //버튼 클릭시에만 동작.
+    tabButtons.forEach((btn) => {
+      btn.style.textDecoration = 'none';
+      const chart = document.querySelector(btn.dataset.link);
+      chart.style.display = 'none';
+    });
+    target.style.textDecoration = 'underline';
+    const selectedChart = document.querySelector(target.dataset.link);
+    selectedChart.style.display = 'block';
+  }
+}
+
 function init() {
   const today = new Date();
 
@@ -214,5 +231,8 @@ function init() {
   dateSendButton.onclick = sendDateEvent;
   createChart(sampleData[`day${todayYMD}`]);
   console.log(todayYMD);
+
+  chartMenu.onclick = chartMenuClickEvent;
 }
+
 init();
