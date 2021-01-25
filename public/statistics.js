@@ -39,15 +39,39 @@ const sampleData = {
       },
     ],
   },
+  day20210123: {
+    study: [
+      {
+        subject: '주식공부',
+        // startTime: "14:30:00",
+        // endTime: "15:30:00",
+        totalTime: 3000,
+        // totalTime: "1:0:0",
+      },
+      {
+        subject: '운동',
+        // startTime: "16:30:00",
+        // endTime: "17:45:30",
+        totalTime: 4530,
+        // totalTime: "1:15:30",
+      },
+      // {
+      //   subject: '음악',
+      //   totalTime: 5000,
+      // },
+    ],
+  },
 };
 
 const inputDate = document.querySelector('.statisticsBox .inputDate');
-const statisticsMain = document.querySelector('.statisticsBox .main');
+const statisticsChart = document.querySelector('.statisticsBox .chart');
 const dateSendButton = document.querySelector(
   '.statisticsBox .sendDate .submitBtn',
 );
-const canvas = document.querySelector('.statisticsBox #myChart');
-const mainText = document.querySelector('.statisticsBox .main .text');
+const canvas_daily = document.querySelector(
+  '.statisticsBox #chartCanvas_daily',
+);
+const chartText = document.querySelector('.statisticsBox .chart .text');
 
 let myChart;
 
@@ -61,9 +85,9 @@ function createChart(dailyData) {
   if (dailyData === undefined) {
     return;
   }
-  const ctx = canvas.getContext('2d');
-  // ctx.clearRect(0, 0, canvas.width, canvas.height);
-  // canvas.clear();
+  const ctx = canvas_daily.getContext('2d');
+  // ctx.clearRect(0, 0, canvas_daily.width, canvas_daily.height);
+  // canvas_daily.clear();
   const chartLabel = [],
     chartData = [];
 
@@ -149,7 +173,7 @@ function sendDateEvent(e) {
       myChart.destroy();
     }
 
-    mainText.innerHTML = '날짜를 다시 확인해주세요';
+    chartText.innerHTML = '날짜를 다시 확인해주세요';
   } else {
     e.preventDefault();
     const date = inputDate.value.split('-').join('');
@@ -163,10 +187,10 @@ function sendDateEvent(e) {
         myChart.destroy();
       }
 
-      mainText.innerHTML = '해당 날짜에 데이터가 없습니다.';
+      chartText.innerHTML = '해당 날짜에 데이터가 없습니다.';
     } else {
-      console.log(dailyData);
-      mainText.innerHTML = '';
+      // console.log(dailyData);
+      chartText.innerHTML = '';
       createChart(dailyData);
     }
   }

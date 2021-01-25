@@ -72,8 +72,16 @@
                 <button class="weekly">주별</button>
                 <button class="monthly">월별</button>
             </div>
-            <div class="main">
-                <canvas id="myChart"></canvas>
+            <div class="chart chart_daily">
+                <canvas id="chartCanvas_daily"></canvas>
+                <p class="text"></p>
+            </div>
+            <div class="chart chart_weekly">
+                <canvas id="chartCanvas_weekly"></canvas>
+                <p class="text"></p>
+            </div>
+            <div class="chart chart_monthly">
+                <canvas id="chartCanvas_monthly"></canvas>
                 <p class="text"></p>
             </div>
         </div>  
@@ -82,9 +90,9 @@
 
 <script src="/studying.js"></script>
 <script src="/toDo.js"></script>
+<script src="/statistics.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-<script src="/statistics.js"></script>
 </html>
