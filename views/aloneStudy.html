@@ -79,6 +79,15 @@
             </div>
         </div>
         <div class="liveListBox" id="livelist" style="display:none;">
+            <form name="selectGroupForm" target="showLiveList">    
+                <select class="selectGroup" onchange="selectGroup(this)">
+                <option>팀 선택</option>
+                <option value="1팀">1팀</option>
+                <option value="2팀">2팀</option>
+                </select>
+            </form>    
+            <iframe id="iframe1" src="#" name="showLiveList" frameborder="0">
+            </iframe>
             <p>
               공부중 : <span class="studyingCount">2</span>/
               <span class="groupCount">5</span>
@@ -107,7 +116,7 @@
                 <div class="streamingScreen"></div>
                 <div class="memberName">사용자</div>
                 <div class="studyingTime">02:33:24</div>
-              </div>
+            </div>
         </div>
     </div>
 </body>
@@ -120,4 +129,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script src="/statistics.js"></script>
 <script src="/studyMenu.js"></script>
+<script src="/selectGroup.js"></script>
 </html>
