@@ -379,6 +379,13 @@ span {
   transition: all 200ms linear;
 }
 
+.typeSelect button#createGroupBtn {
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+  font-family: normal;
+}
+
 .pointer_img {
   /* position: absolute; */
   background-image: url('imgs/Bold-pointer.png');
