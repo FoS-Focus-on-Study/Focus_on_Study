@@ -39,15 +39,41 @@ const sampleData = {
       },
     ],
   },
+  day20210123: {
+    study: [
+      {
+        subject: '주식공부',
+        // startTime: "14:30:00",
+        // endTime: "15:30:00",
+        totalTime: 3000,
+        // totalTime: "1:0:0",
+      },
+      {
+        subject: 'node.js스터디',
+        // startTime: "16:30:00",
+        // endTime: "17:45:30",
+        totalTime: 4530,
+        // totalTime: "1:15:30",
+      },
+      // {
+      //   subject: '음악',
+      //   totalTime: 5000,
+      // },
+    ],
+  },
 };
 
 const inputDate = document.querySelector('.statisticsBox .inputDate');
-const statisticsMain = document.querySelector('.statisticsBox .main');
 const dateSendButton = document.querySelector(
   '.statisticsBox .sendDate .submitBtn',
 );
-const canvas = document.querySelector('.statisticsBox #myChart');
-const mainText = document.querySelector('.statisticsBox .main .text');
+const chartMenu = document.querySelector('.statisticsBox .typeSelect'),
+  tabButtons = document.querySelectorAll('.statisticsBox .typeSelect button');
+
+const canvas_daily = document.querySelector(
+  '.statisticsBox #chartCanvas_daily',
+);
+const chartText = document.querySelector('.statisticsBox .chart .text');
 
 let myChart;
 
@@ -61,9 +87,9 @@ function createChart(dailyData) {
   if (dailyData === undefined) {
     return;
   }
-  const ctx = canvas.getContext('2d');
-  // ctx.clearRect(0, 0, canvas.width, canvas.height);
-  // canvas.clear();
+  const ctx = canvas_daily.getContext('2d');
+  // ctx.clearRect(0, 0, canvas_daily.width, canvas_daily.height);
+  // canvas_daily.clear();
   const chartLabel = [],
     chartData = [];
 
@@ -84,7 +110,7 @@ function createChart(dailyData) {
       labels: chartLabel,
       datasets: [
         {
-          label: 'studying time',
+          label: '공부시간',
           // data: [12, 19, 3, 5, 2, 3],
           data: chartData,
           backgroundColor: [
@@ -149,7 +175,7 @@ function sendDateEvent(e) {
       myChart.destroy();
     }
 
-    mainText.innerHTML = '날짜를 다시 확인해주세요';
+    chartText.innerHTML = '날짜를 다시 확인해주세요';
   } else {
     e.preventDefault();
     const date = inputDate.value.split('-').join('');
@@ -163,10 +189,10 @@ function sendDateEvent(e) {
         myChart.destroy();
       }
 
-      mainText.innerHTML = '해당 날짜에 데이터가 없습니다.';
+      chartText.innerHTML = '해당 날짜에 데이터가 없습니다.';
     } else {
-      console.log(dailyData);
-      mainText.innerHTML = '';
+      // console.log(dailyData);
+      chartText.innerHTML = '';
       createChart(dailyData);
     }
   }
@@ -179,6 +205,21 @@ function sendDateEvent(e) {
 }
 // inputDate.onchange = DateChange;
 
+function chartMenuClickEvent(e) {
+  const target = e.target;
+  if (target.tagName == 'BUTTON') {
+    //버튼 클릭시에만 동작.
+    tabButtons.forEach((btn) => {
+      btn.style.textDecoration = 'none';
+      const chart = document.querySelector(btn.dataset.link);
+      chart.style.display = 'none';
+    });
+    target.style.textDecoration = 'underline';
+    const selectedChart = document.querySelector(target.dataset.link);
+    selectedChart.style.display = 'block';
+  }
+}
+
 function init() {
   const today = new Date();
 
@@ -190,5 +231,8 @@ function init() {
   dateSendButton.onclick = sendDateEvent;
   createChart(sampleData[`day${todayYMD}`]);
   console.log(todayYMD);
+
+  chartMenu.onclick = chartMenuClickEvent;
 }
+
 init();

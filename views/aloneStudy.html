@@ -69,13 +69,21 @@
               <input type="submit" class="submitBtn" value="보기">
             </form>
             <div class="typeSelect">
-                <button class="daily">일별</button>
-                <button class="weekly">주별</button>
-                <button class="monthly">월별</button>
+                <button class="daily" data-link=".chart_daily" style="text-decoration: underline;">일별</button>
+                <button class="weekly" data-link=".chart_weekly">주별</button>
+                <button class="monthly" data-link=".chart_monthly">월별</button>
             </div>
-            <div class="main">
-                <canvas id="myChart"></canvas>
-                <p class="text"></p>
+            <div class="chart chart_daily" style="display: block;">
+                <canvas id="chartCanvas_daily"></canvas>
+                <p class="text">일별차트 test입니다</p>
+            </div>
+            <div class="chart chart_weekly">
+                <canvas id="chartCanvas_weekly"  ></canvas>
+                <p class="text">주별차트 test입니다</p>
+            </div>
+            <div class="chart chart_monthly">
+                <canvas id="chartCanvas_monthly" ></canvas>
+                <p class="text">월별차트 test입니다</p>
             </div>
         </div>
         <div class="liveListBox" id="livelist" style="display:none;">
@@ -114,10 +122,10 @@
 
 <script src="/studying.js"></script>
 <script src="/toDo.js"></script>
+<script src="/statistics.js"></script>
+<script src="/studyMenu.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-<script src="/statistics.js"></script>
-<script src="/studyMenu.js"></script>
 </html>
