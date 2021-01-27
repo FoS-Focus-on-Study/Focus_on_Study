@@ -25,11 +25,15 @@
             </ul>
         </div>
     </nav>
-    <div class="pageFrame Study">
-        <div class="aloneToDoBox">
-            <div class="toDoTitle">
-                <img src="/imgs/todo.png" alt="">
-            </div>
+    <div class="study-menu">
+        <ul>
+            <li style="background-image:url('/imgs/todo.png'); background-size: 150px 50px;" data-link="#todo" class="on"></li>
+            <li style="background-image:url('/imgs/statistics.png'); background-size: 200px 48px;" data-link="#statistics"></li>
+            <li style="background-image:url('/imgs/livelist.png'); background-size: 200px 45px;" data-link="#livelist"></li>
+        </ul>
+    </div>
+    <div class="pageFrame Study"> 
+        <div class="aloneToDoBox" id="todo">
             <div class="subjectList">
             {% for subj in subjects %}    
                 <div class="subjectBox">    
@@ -59,10 +63,7 @@
                 </div>
             </div>
         </div>
-        <div class="statisticsBox">
-            <div class="statisticsTitle">
-                <img src="/imgs/statistics.png" alt="">        
-            </div>
+        <div class="statisticsBox" id="statistics" style="display:none;">
             <form action="" class="sendDate">
               <input type="date" class="inputDate" >
               <input type="submit" class="submitBtn" value="보기">
@@ -76,7 +77,38 @@
                 <canvas id="myChart"></canvas>
                 <p class="text"></p>
             </div>
-        </div>  
+        </div>
+        <div class="liveListBox" id="livelist" style="display:none;">
+            <p>
+              공부중 : <span class="studyingCount">2</span>/
+              <span class="groupCount">5</span>
+            </p>
+            <div class="MemberPart" id="groupMember1">
+              <div class="streamingScreen"></div>
+              <div class="memberName">사장님</div>
+              <div class="studyingTime">02:33:24</div>
+            </div>
+            <div class="MemberPart" id="groupMember2">
+              <div class="streamingScreen"></div>
+              <div class="memberName">누군가</div>
+              <div class="studyingTime">02:33:24</div>
+            </div>
+            <div class="MemberPart" id="groupMember3">
+              <div class="streamingScreen"></div>
+              <div class="memberName">아무나</div>
+              <div class="studyingTime">02:33:24</div>
+            </div>
+            <div class="MemberPart" id="groupMember4">
+              <div class="streamingScreen"></div>
+              <div class="memberName">사용자</div>
+              <div class="studyingTime">02:33:24</div>
+            </div>
+            <div class="MemberPart" id="groupMember5">
+                <div class="streamingScreen"></div>
+                <div class="memberName">사용자</div>
+                <div class="studyingTime">02:33:24</div>
+              </div>
+        </div>
     </div>
 </body>
 
@@ -87,4 +119,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 <script src="/statistics.js"></script>
+<script src="/studyMenu.js"></script>
 </html>
