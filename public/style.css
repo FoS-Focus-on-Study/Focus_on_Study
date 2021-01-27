@@ -384,6 +384,25 @@ span {
   height: 30px;
   font-size: 14px;
   font-family: normal;
+  border: solid black 1px;
+  line-height: 30px;
+  padding: 0;
+}
+
+.createGroupForm {
+  display: flex;
+  flex-flow: column;
+}
+
+.createGroupForm label.heading {
+  font-size: 1.17em;
+  font-weight: bold;
+}
+
+.createGroupForm input {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 5px;
 }
 
 .pointer_img {
