@@ -457,7 +457,7 @@ span {
   padding: 5px;
   margin: auto;
   outline: none;
-  border: none;
+  border: 1px solid #1dd1a1;
   border-radius: 3px;
   background-color: white;
   border-bottom: 4px solid #1dd1a1;
@@ -465,6 +465,7 @@ span {
 
 .selectGroup:focus {
   background-color: whitesmoke;
+  border: 1px solid #ff369b;
   border-bottom: 4px solid #ff369b;
 }
 
