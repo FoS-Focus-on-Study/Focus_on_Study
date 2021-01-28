@@ -34,6 +34,8 @@
     </div> 
     </div>
       <div class="groupBox">
+        <button id="createGroupBtn" onclick="createGroup()" >그룹만들기</button>
+
         <form action="groupStudy.html">    
             <select class="selectGroup">
               <option value="1팀">1팀</option>
@@ -54,4 +56,13 @@
       </div>
     </div>
   </body>
+  <script>
+    function createGroup() {
+      window.open(
+        '/typeSelection/createGroup',
+        'Create Group',
+        'toolbar=no, width=360px, height=550px, directories=no, status=no,    scrollorbars=no, resizable=no',
+      );
+    }
+  </script>
 </html>

@@ -8,6 +8,16 @@ const { render } = require('nunjucks');
 //     next();
 // });
 
+router.get('/createGroup', isLoggedIn, async (req, res, next) => {
+  const dayID = req.query.dayID;
+  try {
+    res.render('createGroup', { dayID });
+  } catch (error) {
+    console.error(error);
+    return next(error);
+  }
+});
+
 router.get('/aloneStudy', isLoggedIn, async (req, res, next) => {
   try {
     const subjects = await Subject.findAll({
