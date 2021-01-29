@@ -27,13 +27,13 @@
     </nav>
     <div class="study-menu">
         <ul>
-            <li style="background-image:url('/imgs/todo.png'); background-size: 150px 50px;" data-link="#todo" class="on"></li>
+            <li style="background-image:url('/imgs/todo.png'); background-size: 150px 50px;" data-link="#aloneToDo" class="on"></li>
             <li style="background-image:url('/imgs/statistics.png'); background-size: 200px 48px;" data-link="#statistics"></li>
             <li style="background-image:url('/imgs/livelist.png'); background-size: 200px 45px;" data-link="#livelist"></li>
         </ul>
     </div>
     <div class="pageFrame Study"> 
-        <div class="aloneToDoBox" id="todo">
+        <div class="toDoBox aloneToDoBox" id="aloneToDo">
             <div class="subjectList">
             {% for subj in subjects %}    
                 <div class="subjectBox">    
@@ -57,7 +57,7 @@
                     <div class="subjectTitle">
                         <form action="/typeSelection/aloneStudy/addSubject" method="post" class="addSubject">
                             <input class="text" name="name" placeholder="과목명"></input>
-                            <button type="submit" class="dbAddButton" >추가</button>
+                            <button type="submit" class="subjectAddButton" >추가</button>
                         </form>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                 <button class="weekly" data-link=".chart_weekly">주별</button>
                 <button class="monthly" data-link=".chart_monthly">월별</button>
             </div>
-            <div class="chart chart_daily" style="display: block;">
+            <div class="chart chart_daily">
                 <canvas id="chartCanvas_daily"></canvas>
                 <p class="text">일별차트 test입니다</p>
             </div>
@@ -87,6 +87,35 @@
             </div>
         </div>
         <div class="liveListBox" id="livelist" style="display:none;">
+            <div class="toDoBox groupToDoBox" id="groupToDo">
+                <div class="subjectList">
+                {% for subj in subjects %}    
+                    <div class="subjectBox">    
+                        <div class="subjectTitle">
+                            <span class="text">{{subj.name}}</span>
+                            <span class="toggle" onclick="clickToggleEvent(this);
+                                loadToDoEvent(this) " >🔽</span>
+                            <button class="deleteButton" onclick="deleteSubjectEvent('{{subj.name}}','{{subj.hostName}}')"></button>
+                        </div>
+                        <div class="details">
+                            <form action="" class="formToDo" onsubmit="submitToDoForm(event)">
+                                <input type="text" class="toDoContent" placeholder="Add Todo">
+                            </form>
+                            <button class="toDoClearBtn" onclick="clearToDoEvent(this)">모두지우기</button>
+                            <ul class="toDoList"></ul>
+                        </div> 
+                    </div>
+                {% endfor %}
+                    <div class="subjectBox"> 
+                        <div class="subjectTitle">
+                            <form action="/typeSelection/aloneStudy/addSubject" method="post" class="addSubject">
+                                <input class="text" name="name" placeholder="과목명"></input>
+                                <button type="submit" class="subjectAddButton" >추가</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <p>
               공부중 : <span class="studyingCount">2</span>/
               <span class="groupCount">5</span>
