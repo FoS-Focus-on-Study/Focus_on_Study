@@ -365,14 +365,13 @@ span {
   display: relative;
 }
 
-.groupBox .selectGroup {
-  margin: auto;
+/* .groupBox.selectGroup {
   display: flex;
   justify-content: center;
   text-align: center;
-  margin-top: 30%;
-  /* margin-bottom: 150px; */
-}
+  padding: 5px;
+  margin: auto;
+} */
 
 .pageFrame.typeSelect button {
   width: 200px;
@@ -437,10 +436,6 @@ span {
   margin-top: 600px;
 }
 
-.groupButton {
-  margin-top: 400px;
-}
-
 /* aloneStudy.html */
 
 .study-menu {
@@ -483,12 +478,34 @@ span {
   color: red;
 }
 
+.selectGroup {
+  cursor: pointer;
+  padding: 5px;
+  margin: auto;
+  outline: none;
+  border: 1px solid #1dd1a1;
+  border-radius: 3px;
+  background-color: white;
+  border-bottom: 4px solid #1dd1a1;
+}
+
+.selectGroup:focus {
+  background-color: whitesmoke;
+  border: 1px solid #ff369b;
+  border-bottom: 4px solid #ff369b;
+}
+
+iframe[id='iframe1'] {
+  width: 0;
+  height: 0;
+  border: 0;
+  visibility: hidden;
+}
+
 .aloneToDoBox,
 .statisticsBox {
   width: 100%;
   padding: 0;
-  /* margin: auto; */
-  /* margin-top: 50px; */
 }
 
 .aloneToDoBox .subjectBox {
@@ -508,7 +525,6 @@ span {
 .aloneToDoBox .toDoTitle,
 .statisticsBox .statisticsTitle {
   height: 70px;
-  /* background-color: beige; */
   padding: 0;
   margin: 0;
   text-align: center;
@@ -902,7 +918,7 @@ body.popup div {
 
 .liveListBox {
   display: flex;
-  width: 500px;
+  width: 450px;
   text-align: center;
   margin: 0 auto;
 }
