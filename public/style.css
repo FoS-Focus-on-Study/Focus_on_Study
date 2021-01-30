@@ -744,10 +744,14 @@ body.popup div {
   font-weight: bolder;
 }
 
-.studyingPopupFrame ul.toDoList {
+.studyingPopupFrame .toDoList ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.studyingPopupFrame .toDoList span.checked {
+  text-decoration: line-through;
 }
 
 /* setRestTime.html */

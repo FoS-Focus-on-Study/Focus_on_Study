@@ -166,9 +166,6 @@ function setLS_NewId() {
     localStorage.setItem('newId', 1);
   }
 }
-
-//init();
-
 function startStudy(name) {
   window.open(
     '/typeSelection/aloneStudy/popup_studying?name=' + name,
@@ -176,6 +173,12 @@ function startStudy(name) {
     'toolbar=no, width=360px, height=510px, directories=no, status=no,    scrollorbars=no, resizable=no',
   );
 }
+
+function init() {
+  setLS_NewId();
+}
+
+init();
 
 // function onSubmit(){
 //   var myForm = document.popForm;
