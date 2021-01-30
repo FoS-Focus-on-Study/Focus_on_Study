@@ -29,7 +29,7 @@
         <ul>
             <li style="background-image:url('/imgs/todo.png'); background-size: 150px 50px;" data-link="#aloneToDo" class="on"></li>
             <li style="background-image:url('/imgs/statistics.png'); background-size: 200px 48px;" data-link="#statistics"></li>
-            <li style="background-image:url('/imgs/livelist.png'); background-size: 200px 45px;" data-link="#groupStudy"></li>
+            <li style="background-image:url('/imgs/groupstudy.png'); background-size: 205px 52px;" data-link="#groupStudy"></li>
         </ul>
     </div>
     <div class="pageFrame Study"> 
@@ -87,6 +87,15 @@
             </div>
         </div>
         <div class="groupStudy" id="groupStudy" style="display:none;">
+            <form name="selectGroupForm" target="showLiveList">    
+                <select class="selectGroup" onchange="selectGroup(this)">
+                <option>팀 선택</option>
+                <option value="1팀">1팀</option>
+                <option value="2팀">2팀</option>
+                </select>
+            </form>    
+            <iframe id="iframe1" src="#" name="showLiveList" frameborder="0">
+            </iframe>
             <div class="toDoBox groupToDoBox" id="groupToDo" style="padding: 0;">
                 <div class="subjectList">
                 {% for subj in subjects %}    
@@ -115,7 +124,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                    </div>
             <div class="liveListBox">
                 <div class="MemberPart" id="groupMember1">
                     <div class="streamingScreen"></div>
@@ -143,7 +152,6 @@
                     <div class="studyingTime">02:33:24</div>
                 </div>
             </div>
-            
         </div>
     </div>
 </body>
@@ -152,6 +160,7 @@
 <script src="/toDo.js"></script>
 <script src="/statistics.js"></script>
 <script src="/studyMenu.js"></script>
+<script src="/selectGroup.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
