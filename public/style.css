@@ -151,7 +151,7 @@ span {
 }
 
 .pageFrame.Study {
-  width: 900px;
+  width: 70%;
   height: 80vh;
   padding: 0;
   margin: 0 auto;
@@ -523,7 +523,7 @@ iframe[id='iframe1'] {
   padding: 0;
 }
 
-.aloneToDoBox .subjectBox {
+.toDoBox .subjectBox {
   border-top: 1px solid lightgray;
   border-left: 1px solid lightgray;
   border-bottom: 2px solid #1dd1a1;
@@ -533,33 +533,23 @@ iframe[id='iframe1'] {
   border-radius: 5px;
 }
 
-.aloneToDoBox .subjectBox.hide {
+.toDoBox .subjectBox.hide {
   display: none;
 }
 
-.aloneToDoBox .toDoTitle,
-.statisticsBox .statisticsTitle {
-  height: 70px;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-
-  border-radius: 20px 0 0 0;
-}
-
-.aloneToDoBox .subjectTitle input {
+.toDoBox .subjectTitle input {
   border: none;
   border-bottom: 1px solid black;
   padding: 5px;
 }
 
-.aloneToDoBox .subjectTitle button {
+.toDoBox .subjectTitle button {
   padding: 3px;
   background-color: transparent;
   cursor: pointer;
 }
 
-.aloneToDoBox .subjectTitle .toggle {
+.toDoBox .subjectTitle .toggle {
   cursor: pointer;
 }
 
@@ -571,7 +561,7 @@ iframe[id='iframe1'] {
   background-position: cover;
 }
 
-.aloneToDoBox .subjectTitle .deleteButton {
+.toDoBox .subjectTitle .deleteButton {
   width: 17px;
   height: 25px;
   background-image: url('imgs/bin1.png');
@@ -580,76 +570,70 @@ iframe[id='iframe1'] {
   float: right;
 }
 
-.aloneToDoBox .subjectTitle .deleteButton:hover {
+.toDoBox .subjectTitle .deleteButton:hover {
   background-image: url('imgs/bin2.png');
   background-repeat: no-repeat;
   background-position: cover;
 }
 
-.aloneToDoBox .subjectBox .details {
+.toDoBox .subjectBox .details {
   display: none;
   padding: 0;
   margin: 0;
 }
-.aloneToDoBox .subjectBox .details.open {
+.toDoBox .subjectBox .details.open {
   display: block;
 }
 
-.aloneToDoBox .subjectBox .details .formToDo {
+.toDoBox .subjectBox .details .formToDo {
   display: inline-block;
 }
 
-.aloneToDoBox .subjectBox .details .toDoContent {
+.toDoBox .subjectBox .details .toDoContent {
   border: none;
   border-bottom: 1px black solid;
   padding: 5px;
   margin-left: 15px;
 }
 
-.aloneToDoBox .subjectBox .details .toDoClearBtn {
+.toDoBox .subjectBox .details .toDoClearBtn {
   border: 1px solid black;
   margin-left: 70px;
 }
 
-.aloneToDoBox .subjectBox .details ul {
+.toDoBox .subjectBox .details ul {
   list-style: none;
   margin: 5px;
   padding: 0;
 }
-.aloneToDoBox .subjectBox .details ul li {
+.toDoBox .subjectBox .details ul li {
   padding: 5px;
   margin-left: 15px;
 }
 
-.aloneToDoBox .subjectBox .details ul li span.checked {
+.toDoBox .subjectBox .details ul li span.checked {
   text-decoration: line-through;
 }
 
-.aloneToDoBox .subjectBox .details button {
+.toDoBox .subjectBox .details button {
   padding: 3px;
   background-color: transparent;
   border: none;
   border-radius: 15px;
   cursor: pointer;
 }
-.aloneToDoBox .subjectBox .details .toDoAddButton {
-  font-size: 20px;
-  margin-left: 50px;
-}
-.aloneToDoBox .subjectAddButton {
-  font-size: 30px;
-  line-height: 30px;
+
+.toDoBox .subjectAddButton {
+  font-size: 15px;
+  line-height: 15px;
   background-color: transparent;
   border: none;
   border-radius: 15px;
   cursor: pointer;
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  /* left: 50%;
+  transform: translateX(-50%); */
 }
-
-/* .aloneToDoBox .subjectTitle .dbAddButton {
-} */
 
 /* aloneStudy.html > statistics */
 
@@ -681,6 +665,20 @@ iframe[id='iframe1'] {
   text-align: center;
   font-size: 20px;
 }
+
+/* groupStudy */
+
+.groupStudy {
+  text-align: center;
+}
+
+.groupStudy .groupToDoBox {
+  display: inline-block;
+  vertical-align: top;
+  width: 450px;
+  text-align: left;
+}
+
 /* popup_studying.html */
 
 body.popup div {
@@ -853,89 +851,13 @@ body.popup div {
   font-weight: bolder;
 }
 
-/* groupStudy.html */
-
-.groupToDoBox {
-  width: 100%;
-  margin: 0;
-}
-
-.groupToDoBox {
-  border-right: black dotted 1px;
-}
-
-.groupToDoBox .toDoTitle,
-.liveListBox .title {
-  height: 70px;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-  font-size: 40px;
-  font-family: cursive;
-  line-height: 70px;
-}
-
-.groupToDoBox .toDoTitle {
-  border-radius: 20px 0 0 0;
-}
-
-.liveListBox .title {
-  border-radius: 0 20px 0 0;
-}
-
-.groupToDoBox .subjectTitle button {
-  padding: 3px;
-  background-color: bisque;
-  border: solid beige 1px;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.groupToDoBox .subjectTitle .deleteButton {
-  float: right;
-}
-
-.groupToDoBox .subjectBox {
-  border: 1px solid black;
-  margin: 10px;
-  border-radius: 20px;
-}
-
-.groupToDoBox .subjectBox .details {
-  padding: 0;
-  margin: 0;
-}
-
-.groupToDoBox .subjectBox .details ul {
-  list-style: none;
-  margin: 5px;
-  padding: 0;
-}
-.groupToDoBox .subjectBox .details button {
-  padding: 3px;
-  background-color: bisque;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
-.groupToDoBox .subjectAddButton {
-  font-size: 30px;
-  line-height: 30px;
-  background-color: goldenrod;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-}
+/* liveListBox  */
 
 .liveListBox {
-  display: flex;
-  width: 450px;
+  display: inline-block;
   text-align: center;
-  margin: 0 auto;
+  padding-left: 30px;
+  width: 500px;
 }
 
 .liveListBox span.studyingCount {
