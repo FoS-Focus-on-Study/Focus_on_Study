@@ -870,21 +870,24 @@ body.popup div {
 }
 
 .liveListBox .MemberPart {
-  background-color: whitesmoke;
+  background-color: white;
   width: 170px;
   height: 130px;
-  border: 1px solid black;
+  border: 1px solid lightgray;
   margin: 10px 10px;
   text-align: center;
   display: inline-block;
+  box-shadow: 1px 1px 2px 1px #10ac84;
+  border-radius: 10px;
 }
 
 .liveListBox .streamingScreen {
   width: 160px;
   height: 90px;
-  border: 1px solid blue;
   padding: 0;
   margin: auto;
+  box-shadow: 0 0 2px #10ac84;
+  border-radius: 10px;
 }
 
 .liveListBox .memberName,
