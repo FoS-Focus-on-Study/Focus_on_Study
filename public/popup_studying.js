@@ -60,12 +60,26 @@ function endStudy() {
   form.submit();
 }
 
+// todo 체크박스 toggle 이벤트
 function checkboxChangeEvent(event) {
   const checkbox = event.target;
   const span = checkbox.nextElementSibling;
   span.classList.toggle('checked');
+
+  //로컬스토리지 complete 값 변경
+  const li = checkbox.parentNode;
+  const subjectName = document.querySelector('.subjectName').innerHTML;
+
+  const LS_todos = localStorage.getItem(`FoS_${subjectName}`);
+  let todos = JSON.parse(LS_todos);
+
+  const index = todos.findIndex((i) => i.id === li.id);
+  todos[index].complete = todos[index].complete == 'yes' ? 'no' : 'yes';
+
+  localStorage.setItem(`FoS_${subjectName}`, JSON.stringify(todos));
 }
 
+//로컬스토리지에서 해당과목 todolist 불러옴
 function setToDoList() {
   const subjectName = document.querySelector('.subjectName').innerHTML;
   const toDoListUl = document.querySelector('.toDoList ul');
@@ -79,10 +93,14 @@ function setToDoList() {
         input = document.createElement('input'),
         span = document.createElement('span');
 
+      li.id = element.id;
       input.type = 'checkbox';
       input.addEventListener('change', checkboxChangeEvent);
       span.innerHTML = element.text;
-
+      if (element.complete == 'yes') {
+        input.checked = true;
+        span.classList.add('checked');
+      }
       li.appendChild(input);
       li.appendChild(span);
       toDoListUl.appendChild(li);

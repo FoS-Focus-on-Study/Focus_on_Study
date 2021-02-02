@@ -4,6 +4,19 @@ function checkboxChangeEvent(event) {
   const checkbox = event.target;
   const span = checkbox.nextElementSibling;
   span.classList.toggle('checked');
+
+  //로컬스토리지 complete 값 변경
+  const li = checkbox.parentNode;
+  const subjectName =
+    checkbox.parentNode.parentNode.parentNode.previousElementSibling
+      .firstElementChild.innerHTML;
+  const LS_todos = localStorage.getItem(`FoS_${subjectName}`);
+  let todos = JSON.parse(LS_todos);
+
+  const index = todos.findIndex((i) => i.id === li.id);
+  todos[index].complete = todos[index].complete == 'yes' ? 'no' : 'yes';
+
+  localStorage.setItem(`FoS_${subjectName}`, JSON.stringify(todos));
 }
 
 function deleteToDoEvent(e) {
@@ -69,6 +82,7 @@ function saveToDo(form) {
   const todo = {
     id: `todo${newId}`,
     text,
+    complete: 'no',
   };
 
   todos.push(todo);
@@ -141,6 +155,10 @@ function paintToDo_LS(ul, todo) {
   input.type = 'checkbox';
   input.addEventListener('change', checkboxChangeEvent);
   span.innerHTML = todo.text;
+  if (todo.complete == 'yes') {
+    input.checked = true;
+    span.classList.add('checked');
+  }
   btn.innerHTML = 'x';
   btn.addEventListener('click', deleteToDoEvent);
 }
