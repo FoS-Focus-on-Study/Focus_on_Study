@@ -551,6 +551,9 @@ iframe[id='iframe1'] {
   background-repeat: no-repeat;
   background-position: cover;
 }
+.aloneToDoBox .subjectTitle .startButton:active {
+  transform: scale(0.9);
+}
 
 .toDoBox .subjectTitle .deleteButton {
   width: 17px;
@@ -588,8 +591,15 @@ iframe[id='iframe1'] {
 }
 
 .toDoBox .subjectBox .details .toDoClearBtn {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  color: gray;
   margin-left: 70px;
+  box-shadow: rgba(5, 5, 7, 0.11) 0px 2px 3px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
+  border: solid 2px rgba(0, 0, 0, 0.2);
+}
+
+.toDoBox .subjectBox .details .toDoClearBtn:active {
+  transform: scale(0.9);
 }
 
 .toDoBox .subjectBox .details ul {
