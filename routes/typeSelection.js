@@ -8,7 +8,7 @@ const { render } = require('nunjucks');
 //     next();
 // });
 
-router.get('/createGroup', isLoggedIn, async (req, res, next) => {
+router.get('/aloneStudy/createGroup', isLoggedIn, async (req, res, next) => {
   const dayID = req.query.dayID;
   try {
     res.render('createGroup', { dayID });
