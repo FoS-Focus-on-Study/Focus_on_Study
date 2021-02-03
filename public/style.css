@@ -593,7 +593,7 @@ iframe[id='iframe1'] {
   border: none;
   border-bottom: 1px black solid;
   padding: 5px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 .toDoBox .subjectBox .details .toDoClearBtn {
@@ -675,8 +675,12 @@ iframe[id='iframe1'] {
 .groupStudy .groupToDoBox {
   display: inline-block;
   vertical-align: top;
-  width: 450px;
+  width: 45%;
   text-align: left;
+}
+
+#groupToDo div:nth-child(1) .details.open .toDoClearBtn {
+  margin-left: 0;
 }
 
 /* popup_studying.html */
@@ -857,7 +861,7 @@ body.popup div {
   display: inline-block;
   text-align: center;
   padding-left: 30px;
-  width: 500px;
+  width: 45%;
 }
 
 .liveListBox span.studyingCount {
@@ -866,8 +870,10 @@ body.popup div {
 
 .liveListBox .MemberPart {
   background-color: whitesmoke;
-  width: 170px;
-  height: 130px;
+  width: 130px;
+  /* width: 40%; */
+  height: 90px;
+  /* height: 35%; */
   border: 1px solid black;
   margin: 10px 10px;
   text-align: center;
@@ -875,8 +881,10 @@ body.popup div {
 }
 
 .liveListBox .streamingScreen {
-  width: 160px;
-  height: 90px;
+  width: 120px;
+  /* width: 90%; */
+  height: 50px;
+  /* height: 50%; */
   border: 1px solid blue;
   padding: 0;
   margin: auto;
@@ -884,7 +892,8 @@ body.popup div {
 
 .liveListBox .memberName,
 .liveListBox .studyingTime {
-  display: inline-block;
+  padding: 0;
+  display: block;
   margin: auto;
 }
 
