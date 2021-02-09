@@ -119,7 +119,7 @@ function init() {
     var oid = document.getElementById('Oid').value;
     clearInterval(studyInterval);
     const option = 'top=150px left=150px width=350px height=200px';
-    var win = window.open('./setRestTime?dayID=' + oid, 'setRestTime', option);
+    var win = window.open('./setRestTime?dayID=' + oid, '', option);
     setTimeout(() => {
       endStudy();
     }, 2000);
