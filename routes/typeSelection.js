@@ -80,17 +80,23 @@ router.get('/aloneStudy/popup_studying', isLoggedIn, async (req, res, next) => {
   try {
     if (subjectName)
       var exDay = await Day.findOne({ where: { subjectName, date, hostName } });
-    if (dayID) var exDay = await Day.findOne({ where: { id: dayID } });
-    if (exDay) res.render('popup_studying', { exDay });
-    else {
+    if (dayID){
+      var exDay = await Day.findOne({ where: { id: dayID } });
+      subjectName = exDay.subjectName;
+    } 
+    if (!exDay) {
       exDay = await Day.create({
         subjectName,
         hostName,
         date,
         seconds: 0,
       });
-      res.render('popup_studying', { exDay });
     }
+    var sublist = await Day.findAll({ where: { subjectName, hostName } });
+    var subseconds = 0;
+    for (i in sublist)
+    subseconds += sublist[i].seconds;
+    res.render('popup_studying', { exDay, subseconds });
   } catch (error) {
     console.error(error);
     return next(error);
@@ -145,7 +151,7 @@ router.post('/aloneStudy/end_study', isLoggedIn, async (req, res, next) => {
 router.get('/aloneStudy/re_studying', isLoggedIn, async (req, res, next) => {
   const dayID = req.query.dayID;
   try {
-    var exDay = await Day.findOne({ where: { id: dayID } });
+    // var exDay = await Day.findOne({ where: { id: dayID } });
     res.redirect('../popup_studying?dayID=' + dayID);
   } catch (error) {
     console.error(error);

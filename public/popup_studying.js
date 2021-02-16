@@ -1,6 +1,6 @@
 const subjectTime = document.querySelector('.timeBox .subjectTime');
 const todayStudyTime = document.querySelector('.timeBox .todayStudyTime');
-let subjectSec = document.getElementById('Oseconds').value,
+let subjectSec = document.getElementById('Osubseconds').value,
   todayStudySec = document.getElementById('Oseconds').value;
 
 function sec_To_HHMMSS(sec) {
