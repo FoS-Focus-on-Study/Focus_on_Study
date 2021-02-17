@@ -1,4 +1,4 @@
-const selectForm = document.selectGroupForm;
+const selectGroupForm = document.selectGroupForm;
 const selectOptions = document.querySelector('.selectGroup');
 const groupToDoBox = document.querySelector('.groupToDoBox');
 const liveListBox = document.querySelector('.liveListBox');
@@ -6,6 +6,13 @@ const liveListBox = document.querySelector('.liveListBox');
 function selectGroup() {
   selectGroupForm.submit();
   selectOptions.blur();
+
+  if (selectOptions.value == 'default') {
+    selectGroupDefault();
+  } else {
+    groupToDoBox.style.display = 'inline-block';
+    liveListBox.style.display = 'inline-block';
+  }
 }
 
 function selectGroupDefault() {
@@ -21,8 +28,13 @@ function createGroup() {
   );
 }
 
+// function selectGroupSubmit(e) {
+//   console.log(e.target);
+// }
+
 function init() {
   selectGroupDefault();
+  // selectGroupForm.addEventListener('submit', selectGroupSubmit);
 }
 
 init();
