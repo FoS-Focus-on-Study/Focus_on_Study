@@ -25,13 +25,6 @@ body.popup {
   background-repeat: no-repeat;
 }
 
-body.mypage {
-  background-image: url('imgs/background-grid.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat;
-}
-
 a {
   text-decoration: none;
   color: white;
@@ -403,22 +396,24 @@ span {
   transition: all 200ms linear;
 }
 
-.groupStudy button#createGroupBtn {
-  width: 100px;
-  height: 30px;
+.groupMenu button {
+  height: 31.8px;
   font-size: 14px;
   font-family: normal;
-  /* border: solid black 1px; */
-  padding: 5px;
-  margin: 10px 60px;
-  float: left;
-
+  padding: 5px 10px;
+  margin-left: 10px;
+  vertical-align: middle;
   border: 1px solid #1dd1a1;
   border-radius: 3px;
   background-color: white;
   border-bottom: 4px solid #1dd1a1;
 }
 
+.groupMenu button:active {
+  background-color: whitesmoke;
+  border: 1px solid #ff369b;
+  border-bottom: 4px solid #ff369b;
+}
 .createGroupForm {
   display: flex;
   flex-flow: column;
@@ -500,6 +495,11 @@ span {
   top: -10%;
   font-size: 60px;
   color: red;
+}
+
+.groupMenu form {
+  display: inline;
+  padding: 0;
 }
 
 .selectGroup {
@@ -605,11 +605,13 @@ iframe[id='iframe1'] {
   border: none;
   border-bottom: 1px black solid;
   padding: 5px;
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 .toDoBox .subjectBox .details .toDoClearBtn {
+  /* border: 1px solid black; */
   color: gray;
+  margin-left: 70px;
   box-shadow: rgba(5, 5, 7, 0.11) 0px 2px 3px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
   border: solid 2px rgba(0, 0, 0, 0.2);
 }
@@ -692,12 +694,8 @@ iframe[id='iframe1'] {
 .groupStudy .groupToDoBox {
   display: inline-block;
   vertical-align: top;
-  width: 45%;
+  width: 450px;
   text-align: left;
-}
-
-#groupToDo div:nth-child(1) .details.open .toDoClearBtn {
-  margin-left: 0;
 }
 
 /* popup_studying.html */
@@ -882,7 +880,7 @@ body.popup div {
   display: inline-block;
   text-align: center;
   padding-left: 30px;
-  width: 45%;
+  width: 500px;
 }
 
 .liveListBox span.studyingCount {
@@ -890,10 +888,10 @@ body.popup div {
 }
 
 .liveListBox .MemberPart {
-  background-color: whitesmoke;
-  width: 130px;
-  height: 90px;
-  border: 1px solid black;
+  background-color: white;
+  width: 170px;
+  height: 130px;
+  border: 1px solid lightgray;
   margin: 10px 10px;
   text-align: center;
   display: inline-block;
@@ -902,9 +900,8 @@ body.popup div {
 }
 
 .liveListBox .streamingScreen {
-  width: 120px;
-  height: 50px;
-  border: 1px solid blue;
+  width: 160px;
+  height: 90px;
   padding: 0;
   margin: auto;
   box-shadow: 0 0 2px #10ac84;
@@ -913,8 +910,7 @@ body.popup div {
 
 .liveListBox .memberName,
 .liveListBox .studyingTime {
-  padding: 0;
-  display: block;
+  display: inline-block;
   margin: auto;
 }
 
