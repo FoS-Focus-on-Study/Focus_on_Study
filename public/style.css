@@ -403,20 +403,30 @@ span {
   border: 1px solid #ff369b;
   border-bottom: 4px solid #ff369b;
 }
-.createGroupForm {
+.createGroupForm,
+.inviteMemberForm {
   display: flex;
   flex-flow: column;
 }
 
-.createGroupForm label.heading {
+.createGroupForm label.heading,
+.inviteMemberForm label.heading {
   font-size: 1.17em;
   font-weight: bold;
 }
 
-.createGroupForm input {
+.createGroupForm input,
+.inviteMemberForm input {
   border: none;
   border-bottom: 1px solid black;
   padding: 5px;
+}
+.createGroupForm button,
+.inviteMemberForm button {
+  padding: 5px;
+  margin: 5px auto;
+  border: 1px solid black;
+  width: 50px;
 }
 
 .pointer_img {
