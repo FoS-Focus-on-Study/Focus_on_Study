@@ -385,22 +385,24 @@ span {
   transition: all 200ms linear;
 }
 
-.groupStudy button#createGroupBtn {
-  width: 100px;
-  height: 30px;
+.groupMenu button {
+  height: 31.8px;
   font-size: 14px;
   font-family: normal;
-  /* border: solid black 1px; */
-  padding: 5px;
-  margin: 10px 60px;
-  float: left;
-
+  padding: 5px 10px;
+  margin-left: 10px;
+  vertical-align: middle;
   border: 1px solid #1dd1a1;
   border-radius: 3px;
   background-color: white;
   border-bottom: 4px solid #1dd1a1;
 }
 
+.groupMenu button:active {
+  background-color: whitesmoke;
+  border: 1px solid #ff369b;
+  border-bottom: 4px solid #ff369b;
+}
 .createGroupForm {
   display: flex;
   flex-flow: column;
@@ -482,6 +484,11 @@ span {
   top: -10%;
   font-size: 60px;
   color: red;
+}
+
+.groupMenu form {
+  display: inline;
+  padding: 0;
 }
 
 .selectGroup {
