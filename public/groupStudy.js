@@ -2,6 +2,7 @@ const selectGroupForm = document.selectGroupForm;
 const selectOptions = document.querySelector('.selectGroup');
 const groupToDoBox = document.querySelector('.groupToDoBox');
 const liveListBox = document.querySelector('.liveListBox');
+const inviteBtn = document.querySelector('#inviteBtn');
 
 function selectGroup() {
   selectGroupForm.submit();
@@ -12,12 +13,14 @@ function selectGroup() {
   } else {
     groupToDoBox.style.display = 'inline-block';
     liveListBox.style.display = 'inline-block';
+    inviteBtn.style.display = 'inline';
   }
 }
 
 function selectGroupDefault() {
   groupToDoBox.style.display = 'none';
   liveListBox.style.display = 'none';
+  inviteBtn.style.display = 'none';
 }
 
 function createGroup() {

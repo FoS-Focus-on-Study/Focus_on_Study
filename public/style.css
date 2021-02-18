@@ -398,6 +398,11 @@ span {
   border-bottom: 4px solid #1dd1a1;
 }
 
+.groupMenu button:active {
+  background-color: whitesmoke;
+  border: 1px solid #ff369b;
+  border-bottom: 4px solid #ff369b;
+}
 .createGroupForm {
   display: flex;
   flex-flow: column;
