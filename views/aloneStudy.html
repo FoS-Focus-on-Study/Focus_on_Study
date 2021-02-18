@@ -119,13 +119,15 @@
                         </div> 
                     </div>
                 {% endfor %}
-                    <div class="subjectBox"> 
-                        <div class="subjectTitle">
+                    <div class="subjectBox "> 
+                        <div class="subjectTitle subjectAddBox">
                             <form action="/typeSelection/aloneStudy/addSubject" method="post" class="addSubject">
                                 <input class="text" name="name" placeholder="과목명"></input>
                                 <button type="submit" class="subjectAddButton" >추가</button>
                             </form>
                         </div>
+                        <button class="importToDoBtn">가져오기</button>
+                        <span class="tooltip_importToDo">개인 ToDo 목록에서 가져옵니다.</span>
                     </div>
                 </div>
             </div>

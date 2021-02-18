@@ -539,10 +539,15 @@ iframe[id='iframe1'] {
   background-color: white;
   margin: 10px;
   border-radius: 5px;
+  position: relative;
 }
 
 .toDoBox .subjectBox.hide {
   display: none;
+}
+
+.toDoBox .subjectTitle.subjectAddBox {
+  display: inline-block;
 }
 
 .toDoBox .subjectTitle input {
@@ -633,7 +638,7 @@ iframe[id='iframe1'] {
   text-decoration: line-through;
 }
 
-.toDoBox .subjectBox .details button {
+.toDoBox .subjectBox button {
   padding: 3px;
   background-color: transparent;
   border: none;
@@ -641,16 +646,41 @@ iframe[id='iframe1'] {
   cursor: pointer;
 }
 
-.toDoBox .subjectAddButton {
-  font-size: 15px;
-  line-height: 15px;
-  background-color: transparent;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  position: relative;
-  /* left: 50%;
-  transform: translateX(-50%); */
+.toDoBox form.addSubject {
+  display: inline-block;
+}
+
+.toDoBox button.subjectAddButton,
+.toDoBox button.importToDoBtn {
+  color: gray;
+  font-size: 13px;
+  line-height: 13px;
+  box-shadow: rgba(5, 5, 7, 0.11) 0px 2px 3px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
+  border: solid 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.toDoBox button.importToDoBtn {
+  margin-left: 70px;
+}
+
+.toDoBox span.tooltip_importToDo {
+  display: none;
+  font-size: 13px;
+  padding: 3px 5px;
+  position: absolute;
+  background-color: #b4d6cd8e;
+  top: 60px;
+  right: 10px;
+  border-radius: 10px;
+}
+.importToDoBtn:hover + .tooltip_importToDo {
+  display: inline;
+}
+
+.toDoBox button.subjectAddButton:active,
+.toDoBox button.importToDoBtn:active {
+  transform: scale(0.9);
 }
 
 /* aloneStudy.html > statistics */
