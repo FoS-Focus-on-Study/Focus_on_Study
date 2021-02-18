@@ -163,6 +163,9 @@ span {
   height: 80vh;
   padding: 0;
   margin: 20px auto;
+  border: 1px solid rgb(172, 172, 172);
+  box-shadow: 3px 3px 5px rgb(143, 143, 143);
+  border-radius: 15px;
 }
 
 /* main.html */
@@ -919,7 +922,6 @@ body.popup div {
 
 .mypage--menu {
   width: 300px;
-  background-color: burlywood;
 }
 
 .mypage--menu ul {
@@ -945,7 +947,7 @@ body.popup div {
 .mypage--menu a.on:before {
   content: '';
   position: absolute;
-  width: 6px;
+  width: 3px;
   height: 56px;
   background-color: orangered;
   top: -2px;
@@ -958,7 +960,6 @@ body.popup div {
 
 .mypage--contents {
   width: 700px;
-  background-color: beige;
 }
 
 /* liveStreaming.html */
