@@ -21,6 +21,7 @@
         </div>
         <div class="navbarMenu div">
             <ul class="navbarMenu">
+                <a href="" class="navbarMenuItem">Mypage</a>
             <a href="auth_fos/logout" class="navbarMenuItem">Logout</a>
             </ul>
         </div>
@@ -87,14 +88,17 @@
             </div>
         </div>
         <div class="groupStudy" id="groupStudy" style="display:none;">
-            <button id="createGroupBtn" onclick="createGroup()" >그룹만들기</button>
-            <form name="selectGroupForm" target="showLiveList">    
-                <select class="selectGroup" onchange="selectGroup(this)">
-                <option>팀 선택</option>
-                <option value="1팀">1팀</option>
-                <option value="2팀">2팀</option>
-                </select>
-            </form>    
+            <div class="groupMenu">
+                <form name="selectGroupForm" target="showLiveList">    
+                    <select class="selectGroup" onchange="selectGroup(this)">
+                        <option value="default">팀 선택</option>
+                        <option value="1팀">1팀</option>
+                        <option value="2팀">2팀</option>
+                    </select>
+                </form>    
+                <button id="createGroupBtn" onclick="createGroup()" >그룹만들기</button>
+                <button id="inviteBtn"  >초대하기</button>
+            </div>
             <iframe id="iframe1" src="#" name="showLiveList" frameborder="0">
             </iframe>
             <div class="toDoBox groupToDoBox" id="groupToDo" style="padding: 0;">
@@ -125,7 +129,7 @@
                         </div>
                     </div>
                 </div>
-                    </div>
+            </div>
             <div class="liveListBox">
                 <div class="MemberPart" id="groupMember1">
                     <div class="streamingScreen"></div>
@@ -160,7 +164,6 @@
 <script src="/toDo.js"></script>
 <script src="/statistics.js"></script>
 <script src="/studyMenu.js"></script>
-<script src="/selectGroup.js"></script>
 <script src="/groupStudy.js"></script>
 
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
