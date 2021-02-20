@@ -415,7 +415,7 @@ span {
   border-bottom: 4px solid #ff369b;
 }
 .createGroupForm,
-.inviteMemberForm{
+.inviteMemberForm {
   display: flex;
   flex-flow: column;
 }
@@ -537,7 +537,11 @@ iframe[id='iframe1'] {
   visibility: hidden;
 }
 
-.aloneToDoBox,
+.aloneToDoBox {
+  width: 500px;
+  margin: auto;
+}
+
 .statisticsBox {
   width: 100%;
   padding: 0;
@@ -691,7 +695,7 @@ iframe[id='iframe1'] {
 .toDoBox button.subjectAddButton:active,
 .toDoBox button.importToDoBtn:active {
   transform: scale(0.9);
-
+}
 /* aloneStudy.html > statistics */
 
 .statisticsBox .statisticsTitle {
