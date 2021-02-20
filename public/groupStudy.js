@@ -35,6 +35,14 @@ function createGroup() {
 //   console.log(e.target);
 // }
 
+function findGroup() {
+  window.open(
+    '/aloneStudy/findGroup',
+    'Find Member',
+    'toolbar=no, width=480px, height=550px, directories=no, status=no,    scrollorbars=no, resizable=no',
+  );
+}
+
 function inviteMember() {
   window.open(
     '/aloneStudy/inviteMember',

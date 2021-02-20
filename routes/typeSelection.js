@@ -20,6 +20,17 @@ router.get('/aloneStudy/createGroup', isLoggedIn, async (req, res, next) => {
 });
 
 //by seonghee
+router.get('/aloneStudy/findGroup', isLoggedIn, async (req, res, next) => {
+  const dayID = req.query.dayID;
+  try {
+    res.render('findGroup', { dayID });
+  } catch (error) {
+    console.error(error);
+    return next(error);
+  }
+});
+
+//by seonghee
 router.get('/aloneStudy/inviteMember', isLoggedIn, async (req, res, next) => {
   const dayID = req.query.dayID;
   try {

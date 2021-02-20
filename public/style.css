@@ -419,6 +419,11 @@ span {
   display: flex;
   flex-flow: column;
 }
+.findGroupForm {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
 
 .createGroupForm label.heading,
 .inviteMemberForm label.heading {
@@ -427,7 +432,8 @@ span {
 }
 
 .createGroupForm input,
-.inviteMemberForm input {
+.inviteMemberForm input,
+.findGroupForm input {
   border: none;
   border-bottom: 1px solid black;
   padding: 5px;
@@ -439,6 +445,55 @@ span {
   margin: 5px auto;
   border: 1px solid black;
   width: 50px;
+}
+
+.findGroupForm button {
+  padding: 5px;
+  margin: 5px 0 0 20px;
+  border: 1px solid black;
+  width: 50px;
+}
+
+.findedGroupList * {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.findedGroupList {
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(5, 5, 7, 0.11) 0px 2px 3px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
+}
+
+.findedGroupList:active {
+  transform: scale(0.95);
+}
+
+.findedGroupList .category {
+  color: #1dd1a1;
+}
+
+.findedGroupList p span {
+  font-size: 9px;
+  padding-right: 5px;
+  color: rgb(166, 167, 166);
+}
+
+.findedGroupList p span:last-child {
+  padding-left: 20px;
+}
+
+.findedGroupList .introduction {
+  border-top: 1px solid rgb(189, 201, 189);
+  margin-top: 10px;
+  padding-top: 5px;
+}
+
+.findedGroupList .groupBox {
+  width: auto;
 }
 
 .pointer_img {
