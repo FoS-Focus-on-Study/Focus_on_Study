@@ -414,20 +414,86 @@ span {
   border: 1px solid #ff369b;
   border-bottom: 4px solid #ff369b;
 }
-.createGroupForm {
+.createGroupForm,
+.inviteMemberForm {
   display: flex;
   flex-flow: column;
 }
+.findGroupForm {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
 
-.createGroupForm label.heading {
+.createGroupForm label.heading,
+.inviteMemberForm label.heading {
   font-size: 1.17em;
   font-weight: bold;
 }
 
-.createGroupForm input {
+.createGroupForm input,
+.inviteMemberForm input,
+.findGroupForm input {
   border: none;
   border-bottom: 1px solid black;
   padding: 5px;
+}
+
+.createGroupForm button,
+.inviteMemberForm button {
+  padding: 5px;
+  margin: 5px auto;
+  border: 1px solid black;
+  width: 50px;
+}
+
+.findGroupForm button {
+  padding: 5px;
+  margin: 5px 0 0 20px;
+  border: 1px solid black;
+  width: 50px;
+}
+
+.findedGroupList * {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.findedGroupList {
+  width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: rgba(5, 5, 7, 0.11) 0px 2px 3px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
+}
+
+.findedGroupList:active {
+  transform: scale(0.95);
+}
+
+.findedGroupList .category {
+  color: #1dd1a1;
+}
+
+.findedGroupList p span {
+  font-size: 9px;
+  padding-right: 5px;
+  color: rgb(166, 167, 166);
+}
+
+.findedGroupList p span:last-child {
+  padding-left: 20px;
+}
+
+.findedGroupList .introduction {
+  border-top: 1px solid rgb(189, 201, 189);
+  margin-top: 10px;
+  padding-top: 5px;
+}
+
+.findedGroupList .groupBox {
+  width: auto;
 }
 
 .pointer_img {
@@ -526,7 +592,11 @@ iframe[id='iframe1'] {
   visibility: hidden;
 }
 
-.aloneToDoBox,
+.aloneToDoBox {
+  width: 500px;
+  margin: auto;
+}
+
 .statisticsBox {
   width: 100%;
   padding: 0;
@@ -540,10 +610,15 @@ iframe[id='iframe1'] {
   background-color: white;
   margin: 10px;
   border-radius: 5px;
+  position: relative;
 }
 
 .toDoBox .subjectBox.hide {
   display: none;
+}
+
+.toDoBox .subjectTitle.subjectAddBox {
+  display: inline-block;
 }
 
 .toDoBox .subjectTitle input {
@@ -632,7 +707,7 @@ iframe[id='iframe1'] {
   text-decoration: line-through;
 }
 
-.toDoBox .subjectBox .details button {
+.toDoBox .subjectBox button {
   padding: 3px;
   background-color: transparent;
   border: none;
@@ -640,18 +715,42 @@ iframe[id='iframe1'] {
   cursor: pointer;
 }
 
-.toDoBox .subjectAddButton {
-  font-size: 15px;
-  line-height: 15px;
-  background-color: transparent;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  position: relative;
-  /* left: 50%;
-  transform: translateX(-50%); */
+.toDoBox form.addSubject {
+  display: inline-block;
 }
 
+.toDoBox button.subjectAddButton,
+.toDoBox button.importToDoBtn {
+  color: gray;
+  font-size: 13px;
+  line-height: 13px;
+  box-shadow: rgba(5, 5, 7, 0.11) 0px 2px 3px, rgba(0, 0, 0, 0.08) 0px 1px 3px;
+  border: solid 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.toDoBox button.importToDoBtn {
+  margin-left: 70px;
+}
+
+.toDoBox span.tooltip_importToDo {
+  display: none;
+  font-size: 13px;
+  padding: 3px 5px;
+  position: absolute;
+  background-color: #b4d6cd8e;
+  top: 60px;
+  right: 10px;
+  border-radius: 10px;
+}
+.importToDoBtn:hover + .tooltip_importToDo {
+  display: inline;
+}
+
+.toDoBox button.subjectAddButton:active,
+.toDoBox button.importToDoBtn:active {
+  transform: scale(0.9);
+}
 /* aloneStudy.html > statistics */
 
 .statisticsBox .statisticsTitle {
